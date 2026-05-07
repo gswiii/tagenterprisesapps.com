@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TAG Enterprises LLC</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(
+        180deg,
+        #0d1117 0%,
+        #131b2a 40%,
+        #0a0f16 100%
+      );
+      color: white;
+      overflow-x: hidden;
+    }
+
+    header {
+      padding: 70px 20px 40px;
+      text-align: center;
+      background:
+        radial-gradient(circle at top, #204060 0%, transparent 60%);
+    }
+
+    .logo {
+      font-size: 3.2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+      color: #6ec1ff;
+      text-shadow:
+        0 0 10px rgba(110,193,255,0.6),
+        0 0 30px rgba(110,193,255,0.3);
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      color: #cfd9e6;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    nav {
+      margin-top: 35px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      margin: 0 14px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.08);
+      transition: all 0.25s ease;
+      display: inline-block;
+    }
+
+    nav a:hover {
+      background: #1f6feb;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(31,111,235,0.4);
+    }
+
+    section {
+      padding: 70px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      color: #6ec1ff;
+    }
+
+    .games-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 28px;
+      margin-top: 30px;
+    }
+
+    .game-card {
+      background: rgba(255,255,255,0.06);
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.45);
+      transition: transform 0.25s ease;
+      backdrop-filter: blur(8px);
+    }
+
+    .game-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .game-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background: #1d2735;
+    }
+
+    .game-content {
+      padding: 24px;
+    }
+
+    .game-title {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .game-description {
+      color: #d6deeb;
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+
+    .coming-soon {
+      color: #7ee787;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .support-box {
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 30px;
+      margin-top: 20px;
+      line-height: 1.8;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .contact-email {
+      color: #6ec1ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      color: #9aa7b8;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 50px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 16px 32px;
+      border-radius: 14px;
+      background: linear-gradient(
+        135deg,
+        #1f6feb,
+        #4895ff
+      );
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: all 0.25s ease;
+      box-shadow:
+        0 10px 25px rgba(31,111,235,0.45);
+    }
+
+    .hero-button:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 14px 30px rgba(31,111,235,0.55);
+    }
+
+    .privacy {
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: #d4dce7;
+    }
+
+    @media (max-width: 768px) {
+      .logo {
+        font-size: 2.4rem;
+      }
+
+      .tagline {
+        font-size: 1rem;
+      }
+
+      nav a {
+        margin: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">TAG Enterprises LLC</div>
+
+  <div class="tagline">
+    Independent mobile game development studio creating polished,
+    engaging, and visually exciting games for Android devices.
+  </div>
+
+  <nav>
+    <a href="#games">Games</a>
+    <a href="#support">Support</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <a class="hero-button" href="#games">
+    View Our Games
+  </a>
+</header>
+
+<section id="games">
+  <h2>Featured Games</h2>
+
+  <div class="games-grid">
+
+    <div class="game-card">
+      <img
+        class="game-image"
+        src="images/tagyz_screenshot.jpg"
+        alt="TAG-YZ Screenshot"
+      />
+
+      <div class="game-content">
+        <div class="game-title">TAG-YZ</div>
+
+        <div class="game-description">
+          A modern dice strategy game inspired by classic Yahtzee-style
+          gameplay, featuring enhanced scoring systems, robot opponents,
+          polished visual effects, dynamic audio, and exciting bonus
+          celebrations.
+        </div>
+
+        <div class="coming-soon">
+          Android Release In Development
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img
+        class="game-image"
+        src="images/mahjong_placeholder.jpg"
+        alt="Mahjong"
+      />
+
+      <div class="game-content">
+        <div class="game-title">Mahjong Collection</div>
+
+        <div class="game-description">
+          A premium Mahjong experience featuring glossy 3D tiles,
+          beautiful visual themes, relaxing gameplay, and modern
+          mobile-friendly design.
+        </div>
+
+        <div class="coming-soon">
+          Coming Soon
+        </div>
+      </div>
+    </div>
+
+    <div class="game-card">
+      <img
+        class="game-image"
+        src="images/domino_placeholder.jpg"
+        alt="Dominoes"
+      />
+
+      <div class="game-content">
+        <div class="game-title">Domino Masters</div>
+
+        <div class="game-description">
+          Competitive and casual domino gameplay with sleek visuals,
+          customizable themes, AI opponents, and online-ready architecture.
+        </div>
+
+        <div class="coming-soon">
+          Coming Soon
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="support">
+  <h2>Support</h2>
+
+  <div class="support-box">
+    If you experience issues with any TAG Enterprises LLC game,
+    please contact support and include:
+    <ul style="margin-top:15px; margin-left:25px;">
+      <li>Device model</li>
+      <li>Android version</li>
+      <li>Description of the issue</li>
+      <li>Screenshots if available</li>
+    </ul>
+
+    <br/>
+
+    Support Email:
+    <a class="contact-email"
+       href="mailto:support@yourdomain.com">
+       support@yourdomain.com
+    </a>
+  </div>
+</section>
+
+<section id="privacy">
+  <h2>Privacy Policy</h2>
+
+  <div class="support-box privacy">
+    TAG Enterprises LLC respects your privacy.
+
+    <br/><br/>
+
+    Our applications may use third-party services such as advertising,
+    analytics, or platform services provided by Google Play.
+
+    <br/><br/>
+
+    We do not knowingly collect personally identifiable information
+    except where required for application functionality, support,
+    or legal compliance.
+
+    <br/><br/>
+
+    Additional privacy policy updates may be published as applications
+    evolve and new services are integrated.
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+
+  <div class="support-box">
+    TAG Enterprises LLC
+
+    <br/><br/>
+
+    General Inquiries:
+    <a class="contact-email"
+       href="mailto:contact@yourdomain.com">
+       contact@yourdomain.com
+    </a>
+
+    <br/><br/>
+
+    Business and Media:
+    <a class="contact-email"
+       href="mailto:business@yourdomain.com">
+       business@yourdomain.com
+    </a>
+  </div>
+</section>
+
+<footer>
+  © 2026 TAG Enterprises LLC. All rights reserved.
+</footer>
+
+</body>
+</html>
