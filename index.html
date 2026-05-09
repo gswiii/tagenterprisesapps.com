@@ -17,18 +17,30 @@
       color: white;
       overflow-x: hidden;
       min-height: 100vh;
+
       background-image:
-        linear-gradient(rgba(5, 8, 14, 0.65), rgba(5, 8, 14, 0.85)),
+        linear-gradient(
+          rgba(5, 8, 14, 0.65),
+          rgba(5, 8, 14, 0.85)
+        ),
         url("images/desert_sunset_panorama.png");
+
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
+
+      transition: background-image 0.5s ease;
     }
 
     header {
       padding: 70px 20px 40px;
       text-align: center;
-      background: radial-gradient(circle at top, rgba(32,64,96,0.75) 0%, transparent 60%);
+      background:
+        radial-gradient(
+          circle at top,
+          rgba(32,64,96,0.75) 0%,
+          transparent 60%
+        );
     }
 
     .logo {
@@ -37,7 +49,10 @@
       letter-spacing: 2px;
       margin-bottom: 15px;
       color: #6ec1ff;
-      text-shadow: 0 0 10px rgba(110,193,255,0.6), 0 0 30px rgba(110,193,255,0.3);
+
+      text-shadow:
+        0 0 10px rgba(110,193,255,0.6),
+        0 0 30px rgba(110,193,255,0.3);
     }
 
     .tagline {
@@ -58,7 +73,9 @@
       margin: 0 14px;
       padding: 12px 22px;
       border-radius: 12px;
+
       background: rgba(255,255,255,0.12);
+
       transition: all 0.25s ease;
       display: inline-block;
     }
@@ -66,7 +83,9 @@
     nav a:hover {
       background: #1f6feb;
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(31,111,235,0.4);
+
+      box-shadow:
+        0 6px 16px rgba(31,111,235,0.4);
     }
 
     section {
@@ -87,19 +106,31 @@
       padding: 16px 32px;
       border: none;
       border-radius: 14px;
-      background: linear-gradient(135deg, #1f6feb, #4895ff);
+
+      background:
+        linear-gradient(
+          135deg,
+          #1f6feb,
+          #4895ff
+        );
+
       color: white;
       text-decoration: none;
       font-weight: bold;
       font-size: 1rem;
       cursor: pointer;
+
       transition: all 0.25s ease;
-      box-shadow: 0 10px 25px rgba(31,111,235,0.45);
+
+      box-shadow:
+        0 10px 25px rgba(31,111,235,0.45);
     }
 
     .hero-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 30px rgba(31,111,235,0.55);
+
+      box-shadow:
+        0 14px 30px rgba(31,111,235,0.55);
     }
 
     .music-status {
@@ -111,9 +142,14 @@
     .background-picker {
       margin-top: 35px;
       padding: 22px;
+
       background: rgba(0,0,0,0.38);
+
       border-radius: 20px;
-      border: 1px solid rgba(255,255,255,0.14);
+
+      border:
+        1px solid rgba(255,255,255,0.14);
+
       max-width: 1100px;
       margin-left: auto;
       margin-right: auto;
@@ -136,11 +172,19 @@
       width: 100%;
       height: 82px;
       object-fit: cover;
+
       border-radius: 12px;
       cursor: pointer;
-      border: 2px solid rgba(255,255,255,0.25);
+
+      border:
+        2px solid rgba(255,255,255,0.25);
+
       transition: all 0.2s ease;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+
+      box-shadow:
+        0 6px 16px rgba(0,0,0,0.35);
+
+      background: #000000;
     }
 
     .background-thumb:hover {
@@ -150,23 +194,35 @@
 
     .background-thumb.selected {
       border-color: #7ee787;
-      box-shadow: 0 0 0 3px rgba(126,231,135,0.25), 0 8px 18px rgba(0,0,0,0.45);
+
+      box-shadow:
+        0 0 0 3px rgba(126,231,135,0.25),
+        0 8px 18px rgba(0,0,0,0.45);
     }
 
     .games-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
       gap: 28px;
       margin-top: 30px;
     }
 
     .game-card {
       background: rgba(8,14,24,0.78);
+
       border-radius: 22px;
       overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+
+      border:
+        1px solid rgba(255,255,255,0.12);
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,0.45);
+
       transition: transform 0.25s ease;
+
       backdrop-filter: blur(8px);
     }
 
@@ -205,11 +261,15 @@
 
     .support-box {
       background: rgba(8,14,24,0.78);
+
       border-radius: 20px;
       padding: 30px;
       margin-top: 20px;
       line-height: 1.8;
-      border: 1px solid rgba(255,255,255,0.12);
+
+      border:
+        1px solid rgba(255,255,255,0.12);
+
       backdrop-filter: blur(8px);
     }
 
@@ -229,8 +289,12 @@
       text-align: center;
       padding: 50px 20px;
       color: #c7d0df;
-      border-top: 1px solid rgba(255,255,255,0.12);
+
+      border-top:
+        1px solid rgba(255,255,255,0.12);
+
       margin-top: 50px;
+
       background: rgba(0,0,0,0.35);
     }
 
@@ -241,6 +305,7 @@
     }
 
     @media (max-width: 768px) {
+
       .logo {
         font-size: 2.4rem;
       }
@@ -265,7 +330,10 @@
 <audio id="bg-music"></audio>
 
 <header>
-  <div class="logo">TAG Enterprises LLC</div>
+
+  <div class="logo">
+    TAG Enterprises LLC
+  </div>
 
   <div class="tagline">
     Independent mobile game development studio creating polished,
@@ -280,11 +348,17 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <a class="hero-button" href="#games">View Our Games</a>
+  <a class="hero-button" href="#games">
+    View Our Games
+  </a>
 
   <br />
 
-  <button class="hero-button" onclick="toggleMusic()" type="button">
+  <button
+    class="hero-button"
+    onclick="toggleMusic()"
+    type="button">
+
     Play / Pause Music
   </button>
 
@@ -293,66 +367,130 @@
   </div>
 
   <div id="backgrounds" class="background-picker">
+
     <div class="background-picker-title">
       Choose Website Background
     </div>
 
     <div class="background-row" id="background-row"></div>
+
   </div>
+
 </header>
 
 <section id="games">
+
   <h2>Featured Games</h2>
 
   <div class="games-grid">
 
     <div class="game-card">
-      <img class="game-image" src="images/tagyz_screenshot.jpg" alt="TAG-YZ Screenshot" />
+
+      <img
+        class="game-image"
+        src="images/tagyz_screenshot.jpg"
+        alt="TAG-YZ Screenshot"
+      />
+
       <div class="game-content">
-        <div class="game-title">TAG-YZ</div>
-        <div class="game-description">
-          A modern dice strategy game inspired by classic Yahtzee-style gameplay,
-          featuring enhanced scoring systems, robot opponents, polished visual
-          effects, dynamic audio, and exciting bonus celebrations.
+
+        <div class="game-title">
+          TAG-YZ
         </div>
-        <div class="coming-soon">Android Release In Development</div>
+
+        <div class="game-description">
+          A modern dice strategy game inspired by classic
+          Yahtzee-style gameplay, featuring enhanced scoring
+          systems, robot opponents, polished visual effects,
+          dynamic audio, and exciting bonus celebrations.
+        </div>
+
+        <div class="coming-soon">
+          Android Release In Development
+        </div>
+
       </div>
     </div>
 
     <div class="game-card">
-      <img class="game-image" src="images/mahjong_placeholder.jpg" alt="Mahjong" />
+
+      <img
+        class="game-image"
+        src="images/mahjong_placeholder.jpg"
+        alt="Mahjong"
+      />
+
       <div class="game-content">
-        <div class="game-title">Mahjong Collection</div>
-        <div class="game-description">
-          A premium Mahjong experience featuring glossy 3D tiles, beautiful
-          visual themes, relaxing gameplay, and modern mobile-friendly design.
+
+        <div class="game-title">
+          Mahjong Collection
         </div>
-        <div class="coming-soon">Coming Soon</div>
+
+        <div class="game-description">
+          A premium Mahjong experience featuring glossy 3D tiles,
+          beautiful visual themes, relaxing gameplay, and modern
+          mobile-friendly design.
+        </div>
+
+        <div class="coming-soon">
+          Coming Soon
+        </div>
+
       </div>
     </div>
 
     <div class="game-card">
-      <img class="game-image" src="images/domino_placeholder.jpg" alt="Dominoes" />
+
+      <img
+        class="game-image"
+        src="images/domino_placeholder.jpg"
+        alt="Dominoes"
+      />
+
       <div class="game-content">
-        <div class="game-title">Domino Masters</div>
+
+        <div class="game-title">
+          Domino Masters
+        </div>
+
         <div class="game-description">
           Competitive and casual domino gameplay with sleek visuals,
-          customizable themes, AI opponents, and online-ready architecture.
+          customizable themes, AI opponents, and online-ready
+          architecture.
         </div>
-        <div class="coming-soon">Coming Soon</div>
+
+        <div class="coming-soon">
+          Coming Soon
+        </div>
+
       </div>
     </div>
 
     <div class="game-card">
-      <img class="game-image" src="images/cards_placeholder.jpg" alt="Card Games" />
+
+      <img
+        class="game-image"
+        src="images/cards_placeholder.jpg"
+        alt="Card Games"
+      />
+
       <div class="game-content">
-        <div class="game-title">Classic Card Collection</div>
-        <div class="game-description">
-          A growing collection of polished mobile card games featuring glossy
-          animated playing cards, customizable themes, smooth gameplay,
-          intelligent AI opponents, and modern mobile-friendly interfaces.
+
+        <div class="game-title">
+          Classic Card Collection
         </div>
-        <div class="coming-soon">Coming Soon</div>
+
+        <div class="game-description">
+          A growing collection of polished mobile card games
+          featuring glossy animated playing cards, customizable
+          themes, smooth gameplay, intelligent AI opponents,
+          and modern mobile-friendly interfaces.
+        </div>
+
+        <div class="coming-soon">
+          Coming Soon
+        </div>
+
       </div>
     </div>
 
@@ -360,11 +498,14 @@
 </section>
 
 <section id="support">
+
   <h2>Support</h2>
 
   <div class="support-box">
+
     If you experience issues with any TAG Enterprises LLC game,
     please contact support and include:
+
     <ul style="margin-top:15px; margin-left:25px;">
       <li>Device model</li>
       <li>Android version</li>
@@ -375,54 +516,75 @@
     <br/>
 
     Support Email:
-    <a class="contact-email" href="mailto:support@tagenterprisesapps.com">
+
+    <a
+      class="contact-email"
+      href="mailto:support@tagenterprisesapps.com">
+
       support@tagenterprisesapps.com
     </a>
+
   </div>
 </section>
 
 <section id="privacy">
+
   <h2>Privacy Policy</h2>
 
   <div class="support-box privacy">
+
     TAG Enterprises LLC respects your privacy.
 
     <br/><br/>
 
-    Our applications may use third-party services such as advertising,
-    analytics, or platform services provided by Google Play.
+    Our applications may use third-party services such as
+    advertising, analytics, or platform services provided
+    by Google Play.
 
     <br/><br/>
 
-    We do not knowingly collect personally identifiable information except
-    where required for application functionality, support, or legal compliance.
+    We do not knowingly collect personally identifiable
+    information except where required for application
+    functionality, support, or legal compliance.
 
     <br/><br/>
 
-    Additional privacy policy updates may be published as applications evolve
-    and new services are integrated.
+    Additional privacy policy updates may be published
+    as applications evolve and new services are integrated.
+
   </div>
 </section>
 
 <section id="contact">
+
   <h2>Contact</h2>
 
   <div class="support-box">
+
     TAG Enterprises LLC
 
     <br/><br/>
 
     General Inquiries:
-    <a class="contact-email" href="mailto:contact@tagenterprisesapps.com">
+
+    <a
+      class="contact-email"
+      href="mailto:contact@tagenterprisesapps.com">
+
       contact@tagenterprisesapps.com
     </a>
 
     <br/><br/>
 
     Business and Media:
-    <a class="contact-email" href="mailto:business@tagenterprisesapps.com">
+
+    <a
+      class="contact-email"
+      href="mailto:business@tagenterprisesapps.com">
+
       business@tagenterprisesapps.com
     </a>
+
   </div>
 </section>
 
@@ -431,10 +593,15 @@
 </footer>
 
 <script>
-  const music = document.getElementById("bg-music");
-  const musicStatus = document.getElementById("music-status");
+
+  const music =
+    document.getElementById("bg-music");
+
+  const musicStatus =
+    document.getElementById("music-status");
 
   const tracks = [
+
     "audio/bg_track_2.mp3",
     "audio/bg_track_3.mp3",
     "audio/bg_track_4.mp3",
@@ -443,33 +610,41 @@
     "audio/bg_track_7.mp3",
     "audio/bg_track_8.mp3",
     "audio/bg_track_9.mp3"
+
   ];
 
   const backgrounds = [
+
     {
       name: "Desert",
       file: "images/desert_sunset_panorama.png"
     },
+
     {
       name: "Coral Reef",
       file: "images/coral_reef_panorama.png"
     },
-    {
-      name: "Forest",
-      file: "images/forest_panorama.png"
-    },
-    {
-      name: "Mountains",
-      file: "images/mountain_panorama.png"
-    },
-    {
-      name: "City",
-      file: "images/city_night_panorama.png"
-    },
+
     {
       name: "Space",
-      file: "images/space_panorama.png"
+      file: "images/space_planets_panorama.png"
+    },
+
+    {
+      name: "Waterfall",
+      file: "images/waterfall_cliffs_panorama.png"
+    },
+
+    {
+      name: "Wildflowers",
+      file: "images/wildflowers_panorama.png"
+    },
+
+    {
+      name: "Winter Forest",
+      file: "images/winter_forest_panorama.png"
     }
+
   ];
 
   let shuffledTracks = [];
@@ -478,27 +653,40 @@
   let currentTrackName = "";
 
   function shuffleArray(array) {
+
     const copy = [...array];
 
     for (let i = copy.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [copy[i], copy[j]] = [copy[j], copy[i]];
+
+      const j =
+        Math.floor(Math.random() * (i + 1));
+
+      [copy[i], copy[j]] =
+        [copy[j], copy[i]];
     }
 
     return copy;
   }
 
   function buildPlaylist() {
-    const previousTrack = currentTrackName;
-    shuffledTracks = shuffleArray(tracks);
+
+    const previousTrack =
+      currentTrackName;
+
+    shuffledTracks =
+      shuffleArray(tracks);
 
     if (
       previousTrack &&
       shuffledTracks.length > 1 &&
       shuffledTracks[0] === previousTrack
     ) {
+
       const swapIndex =
-        Math.floor(Math.random() * (shuffledTracks.length - 1)) + 1;
+        Math.floor(
+          Math.random() *
+          (shuffledTracks.length - 1)
+        ) + 1;
 
       [shuffledTracks[0], shuffledTracks[swapIndex]] =
         [shuffledTracks[swapIndex], shuffledTracks[0]];
@@ -508,6 +696,7 @@
   }
 
   function getTrackLabel(trackPath) {
+
     return trackPath
       .replace("audio/", "")
       .replace(".mp3", "")
@@ -516,100 +705,180 @@
   }
 
   function playCurrentTrack() {
-    if (currentIndex >= shuffledTracks.length) {
+
+    if (
+      currentIndex >= shuffledTracks.length
+    ) {
+
       buildPlaylist();
     }
 
-    currentTrackName = shuffledTracks[currentIndex];
-    music.src = currentTrackName;
+    currentTrackName =
+      shuffledTracks[currentIndex];
+
+    music.src =
+      currentTrackName;
+
     music.volume = 0.30;
 
     music.play()
+
       .then(() => {
+
         musicStatus.textContent =
-          "Playing: " + getTrackLabel(currentTrackName);
+          "Playing: " +
+          getTrackLabel(currentTrackName);
+
       })
+
       .catch(() => {
+
         musicStatus.textContent =
           "Click Play / Pause Music to start music";
       });
   }
 
   function toggleMusic() {
+
     if (!initialized) {
+
       buildPlaylist();
       playCurrentTrack();
+
       initialized = true;
+
       return;
     }
 
     if (music.paused) {
+
       music.play()
+
         .then(() => {
+
           musicStatus.textContent =
-            "Playing: " + getTrackLabel(currentTrackName);
+            "Playing: " +
+            getTrackLabel(currentTrackName);
+
         })
+
         .catch(() => {
+
           musicStatus.textContent =
             "Click Play / Pause Music to start music";
         });
+
     } else {
+
       music.pause();
-      musicStatus.textContent = "Music paused";
+
+      musicStatus.textContent =
+        "Music paused";
     }
   }
 
   music.addEventListener("ended", () => {
+
     currentIndex++;
+
     playCurrentTrack();
   });
 
-  function setWebsiteBackground(backgroundFile, selectedImage) {
+  function setWebsiteBackground(
+    backgroundFile,
+    selectedImage
+  ) {
+
     document.body.style.backgroundImage =
+
       'linear-gradient(rgba(5, 8, 14, 0.65), rgba(5, 8, 14, 0.85)), url("' +
+
       backgroundFile +
+
       '")';
 
-    document.querySelectorAll(".background-thumb").forEach(img => {
-      img.classList.remove("selected");
-    });
+    document
+      .querySelectorAll(".background-thumb")
+
+      .forEach(img => {
+
+        img.classList.remove("selected");
+      });
 
     if (selectedImage) {
+
       selectedImage.classList.add("selected");
     }
 
-    localStorage.setItem("selectedBackground", backgroundFile);
+    localStorage.setItem(
+      "selectedBackground",
+      backgroundFile
+    );
   }
 
   function loadBackgroundPicker() {
-    const row = document.getElementById("background-row");
-    const savedBackground = localStorage.getItem("selectedBackground");
-    const defaultBackground = backgrounds[0].file;
-    const startingBackground = savedBackground || defaultBackground;
+
+    const row =
+      document.getElementById("background-row");
+
+    const savedBackground =
+      localStorage.getItem(
+        "selectedBackground"
+      );
+
+    const defaultBackground =
+      backgrounds[0].file;
+
+    const startingBackground =
+      savedBackground || defaultBackground;
 
     backgrounds.forEach(background => {
-      const img = document.createElement("img");
 
-      img.src = background.file;
-      img.alt = background.name;
-      img.title = background.name;
-      img.className = "background-thumb";
+      const img =
+        document.createElement("img");
 
-      if (background.file === startingBackground) {
+      img.src =
+        background.file;
+
+      img.alt =
+        background.name;
+
+      img.title =
+        background.name;
+
+      img.className =
+        "background-thumb";
+
+      if (
+        background.file === startingBackground
+      ) {
+
         img.classList.add("selected");
       }
 
       img.onclick = () => {
-        setWebsiteBackground(background.file, img);
+
+        setWebsiteBackground(
+          background.file,
+          img
+        );
       };
 
       row.appendChild(img);
     });
 
-    setWebsiteBackground(startingBackground, document.querySelector(".background-thumb.selected"));
+    setWebsiteBackground(
+
+      startingBackground,
+
+      document.querySelector(
+        ".background-thumb.selected"
+      )
+    );
   }
 
   loadBackgroundPicker();
+
 </script>
 
 </body>
