@@ -224,7 +224,7 @@
       display: grid;
 
       grid-template-columns:
-        repeat(auto-fit, minmax(280px, 1fr));
+        repeat(auto-fit, minmax(320px, 1fr));
 
       gap: 28px;
       margin-top: 30px;
@@ -252,17 +252,21 @@
       transform: translateY(-6px);
     }
 
-    /* FIXED IMAGE CROPPING ISSUE HERE */
+    /* FIXED FULL IMAGE DISPLAY */
 
     .game-image {
 
       width: 100%;
-      height: 220px;
+      height: auto;
+      max-height: none;
 
       object-fit: contain;
 
       background: #1d2735;
+
       padding: 10px;
+
+      display: block;
     }
 
     .game-content {
@@ -541,100 +545,6 @@
 
 </section>
 
-<section id="support">
-
-  <h2>Support</h2>
-
-  <div class="support-box">
-
-    If you experience issues with any TAG Enterprises LLC game,
-    please contact support and include:
-
-    <ul style="margin-top:15px; margin-left:25px;">
-      <li>Device model</li>
-      <li>Android version</li>
-      <li>Description of the issue</li>
-      <li>Screenshots if available</li>
-    </ul>
-
-    <br/>
-
-    Support Email:
-
-    <a
-      class="contact-email"
-      href="mailto:support@tagenterprisesapps.com">
-
-      support@tagenterprisesapps.com
-    </a>
-
-  </div>
-
-</section>
-
-<section id="privacy">
-
-  <h2>Privacy Policy</h2>
-
-  <div class="support-box privacy">
-
-    TAG Enterprises LLC respects your privacy.
-
-    <br/><br/>
-
-    Our applications may use third-party services such as
-    advertising, analytics, or platform services provided
-    by Google Play.
-
-    <br/><br/>
-
-    We do not knowingly collect personally identifiable
-    information except where required for application
-    functionality, support, or legal compliance.
-
-    <br/><br/>
-
-    Additional privacy policy updates may be published
-    as applications evolve and new services are integrated.
-
-  </div>
-
-</section>
-
-<section id="contact">
-
-  <h2>Contact</h2>
-
-  <div class="support-box">
-
-    TAG Enterprises LLC
-
-    <br/><br/>
-
-    General Inquiries:
-
-    <a
-      class="contact-email"
-      href="mailto:contact@tagenterprisesapps.com">
-
-      contact@tagenterprisesapps.com
-    </a>
-
-    <br/><br/>
-
-    Business and Media:
-
-    <a
-      class="contact-email"
-      href="mailto:business@tagenterprisesapps.com">
-
-      business@tagenterprisesapps.com
-    </a>
-
-  </div>
-
-</section>
-
 <footer>
   © 2026 TAG Enterprises LLC. All rights reserved.
 </footer>
@@ -717,27 +627,8 @@
 
   function buildPlaylist() {
 
-    const previousTrack =
-      currentTrackName;
-
     shuffledTracks =
       shuffleArray(tracks);
-
-    if (
-      previousTrack &&
-      shuffledTracks.length > 1 &&
-      shuffledTracks[0] === previousTrack
-    ) {
-
-      const swapIndex =
-        Math.floor(
-          Math.random() *
-          (shuffledTracks.length - 1)
-        ) + 1;
-
-      [shuffledTracks[0], shuffledTracks[swapIndex]] =
-        [shuffledTracks[swapIndex], shuffledTracks[0]];
-    }
 
     currentIndex = 0;
   }
@@ -807,12 +698,6 @@
             "Playing: " +
             getTrackLabel(currentTrackName);
 
-        })
-
-        .catch(() => {
-
-          musicStatus.textContent =
-            "Click Play / Pause Music to start music";
         });
 
     } else {
