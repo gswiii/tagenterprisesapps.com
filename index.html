@@ -7,6 +7,10 @@
 
   <style>
 
+    :root {
+      --site-bg: url("images/desert_sunset_panorama.png");
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -19,17 +23,34 @@
       color: white;
       overflow-x: hidden;
       min-height: 100vh;
+      position: relative;
+    }
+
+    /* MOBILE SAFE BACKGROUND SYSTEM */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      z-index: -1;
 
       background-image:
         linear-gradient(
           rgba(5, 8, 14, 0.65),
           rgba(5, 8, 14, 0.85)
         ),
-        url("images/desert_sunset_panorama.png");
+        var(--site-bg);
 
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
+      background-repeat: no-repeat;
 
       transition: background-image 0.5s ease;
     }
@@ -292,35 +313,6 @@
       font-weight: bold;
     }
 
-    .support-box {
-
-      background: rgba(8,14,24,0.78);
-
-      border-radius: 20px;
-      padding: 30px;
-      margin-top: 20px;
-      line-height: 1.8;
-
-      border:
-        1px solid rgba(255,255,255,0.12);
-
-      backdrop-filter: blur(8px);
-    }
-
-    .contact-email {
-
-      color: #6ec1ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .privacy {
-
-      font-size: 0.95rem;
-      line-height: 1.8;
-      color: #d4dce7;
-    }
-
     footer {
 
       text-align: center;
@@ -383,9 +375,6 @@
 
     <a href="#games">Games</a>
     <a href="#backgrounds">Backgrounds</a>
-    <a href="#support">Support</a>
-    <a href="#privacy">Privacy</a>
-    <a href="#contact">Contact</a>
 
   </nav>
 
@@ -605,7 +594,6 @@
   let shuffledTracks = [];
   let currentIndex = 0;
   let initialized = false;
-  let currentTrackName = "";
 
   function shuffleArray(array) {
 
@@ -649,11 +637,11 @@
       buildPlaylist();
     }
 
-    currentTrackName =
+    const currentTrack =
       shuffledTracks[currentIndex];
 
     music.src =
-      currentTrackName;
+      currentTrack;
 
     music.volume = 0.30;
 
@@ -663,7 +651,7 @@
 
         musicStatus.textContent =
           "Playing: " +
-          getTrackLabel(currentTrackName);
+          getTrackLabel(currentTrack);
 
       })
 
@@ -688,15 +676,7 @@
 
     if (music.paused) {
 
-      music.play()
-
-        .then(() => {
-
-          musicStatus.textContent =
-            "Playing: " +
-            getTrackLabel(currentTrackName);
-
-        });
+      music.play();
 
     } else {
 
@@ -719,13 +699,12 @@
     selectedImage
   ) {
 
-    document.body.style.backgroundImage =
+    document.documentElement.style.setProperty(
 
-      'linear-gradient(rgba(5, 8, 14, 0.65), rgba(5, 8, 14, 0.85)), url("' +
+      "--site-bg",
 
-      backgroundFile +
-
-      '")';
+      'url("' + backgroundFile + '")'
+    );
 
     document
       .querySelectorAll(".background-thumb")
