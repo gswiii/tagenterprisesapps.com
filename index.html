@@ -7,208 +7,175 @@
   <link rel="icon" href="data:," />
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html,
-    body {
+    html, body {
       margin: 0;
       width: 100%;
       min-height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      color: white;
+      overflow-x: hidden;
+      background: #000;
     }
 
     body {
-      background-image: url("./images/desert_sunset_panorama.png?v=20260512-bg-1");
+      background-image: url("./images/desert_sunset_panorama.png?v=20260512-final-bg");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      overflow-x: hidden;
-      transition: background-image 0.35s ease-in-out;
     }
 
-    .overlay {
+    .page {
       min-height: 100vh;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.30);
-      padding: 24px 18px 32px;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(2rem, 6vw, 4.25rem);
-      text-shadow: 0 4px 12px rgba(0,0,0,0.8);
-    }
-
-    .subtitle {
-      margin-top: 8px;
-      font-size: clamp(1rem, 2.5vw, 1.4rem);
-      text-shadow: 0 3px 8px rgba(0,0,0,0.8);
-    }
-
-    .controls {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 10px;
-      margin: 22px auto 24px;
-      max-width: 1300px;
+      align-items: flex-start;
+      padding: 0;
     }
 
-    button {
-      cursor: pointer;
-      border: 2px solid rgba(255,255,255,0.9);
-      border-radius: 999px;
-      padding: 9px 16px;
-      color: white;
-      background: rgba(0,0,0,0.58);
-      font-size: 0.95rem;
-      font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.45);
+    .main-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
     }
 
-    button:hover {
-      background: rgba(255,255,255,0.22);
+    .main-image {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
     }
 
     .music-button {
-      background: rgba(0, 88, 180, 0.78);
+      position: fixed;
+      right: 14px;
+      bottom: 14px;
+      z-index: 1000;
+      cursor: pointer;
+      border: 2px solid rgba(255,255,255,0.9);
+      border-radius: 999px;
+      padding: 10px 16px;
+      color: white;
+      background: rgba(0,0,0,0.65);
+      font-size: 14px;
+      font-weight: bold;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
     }
 
-    .main-artwork-wrap {
-      max-width: 1200px;
-      margin: 0 auto 28px;
-      text-align: center;
+    .hotspot {
+      position: absolute;
+      z-index: 10;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      padding: 0;
     }
 
-    .main-artwork {
-      display: block;
-      width: 100%;
-      max-width: 1200px;
-      height: auto;
-      margin: 0 auto;
-      border-radius: 18px;
-      box-shadow: 0 12px 34px rgba(0,0,0,0.55);
+    .hotspot:focus {
+      outline: 3px solid rgba(255,255,255,0.8);
+      outline-offset: 2px;
     }
 
-    footer {
-      text-align: center;
-      margin-top: 36px;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.92);
-      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
-    }
+    /*
+      These invisible buttons sit over the background-selection labels
+      already printed inside main_web.png.
 
-    @media (max-width: 700px) {
-      .overlay {
-        padding: 18px 12px 28px;
-      }
+      If one is slightly off, tell me which label is missed and I will
+      adjust the percentages.
+    */
 
-      .controls {
-        gap: 8px;
-      }
-
-      button {
-        font-size: 0.85rem;
-        padding: 8px 12px;
-      }
-
-      .main-artwork {
-        border-radius: 12px;
-      }
-    }
+    .coral     { left: 6%;  top: 12%; width: 13%; height: 7%; }
+    .desert    { left: 20%; top: 12%; width: 15%; height: 7%; }
+    .space     { left: 36%; top: 12%; width: 15%; height: 7%; }
+    .waterfall { left: 52%; top: 12%; width: 17%; height: 7%; }
+    .wild      { left: 70%; top: 12%; width: 13%; height: 7%; }
+    .winter    { left: 84%; top: 12%; width: 12%; height: 7%; }
   </style>
 </head>
 
 <body>
-  <audio id="backgroundMusic" loop preload="auto">
-    <source src="./audio/background_music.mp3" type="audio/mpeg" />
-  </audio>
+  <audio id="backgroundMusic" loop preload="auto"></audio>
 
-  <div class="overlay">
-    <header>
-      <h1>TAG Enterprises LLC</h1>
-      <div class="subtitle">Games, apps, and entertainment projects</div>
-    </header>
+  <button class="music-button" type="button" onclick="toggleMusic()">
+    Music: Off
+  </button>
 
-    <div class="controls">
-      <button type="button" class="music-button" onclick="toggleMusic()">
-        Start Music
-      </button>
-
-      <button type="button" onclick="setBackground('./images/coral_reef_panorama.png')">
-        Coral Reef
-      </button>
-
-      <button type="button" onclick="setBackground('./images/desert_sunset_panorama.png')">
-        Desert Sunset
-      </button>
-
-      <button type="button" onclick="setBackground('./images/space_planets_panorama.png')">
-        Space Planets
-      </button>
-
-      <button type="button" onclick="setBackground('./images/waterfall_cliffs_panorama.png')">
-        Waterfall Cliffs
-      </button>
-
-      <button type="button" onclick="setBackground('./images/wildflowers_panorama.png')">
-        Wildflowers
-      </button>
-
-      <button type="button" onclick="setBackground('./images/winter_forest_panorama.png')">
-        Winter Forest
-      </button>
-    </div>
-
-    <div class="main-artwork-wrap">
+  <main class="page">
+    <div class="main-wrap">
       <img
-        class="main-artwork"
-        src="./images/main_web.png?v=20260512-main-1"
-        alt="TAG Enterprises LLC game collection"
+        class="main-image"
+        src="./images/main_web.png?v=20260512-final-main"
+        alt="TAG Enterprises LLC"
       />
-    </div>
 
-    <footer>
-      © 2026 TAG Enterprises LLC
-    </footer>
-  </div>
+      <button class="hotspot coral" type="button" aria-label="Coral Reef Background"
+        onclick="setBackground('./images/coral_reef_panorama.png')"></button>
+
+      <button class="hotspot desert" type="button" aria-label="Desert Sunset Background"
+        onclick="setBackground('./images/desert_sunset_panorama.png')"></button>
+
+      <button class="hotspot space" type="button" aria-label="Space Planets Background"
+        onclick="setBackground('./images/space_planets_panorama.png')"></button>
+
+      <button class="hotspot waterfall" type="button" aria-label="Waterfall Cliffs Background"
+        onclick="setBackground('./images/waterfall_cliffs_panorama.png')"></button>
+
+      <button class="hotspot wild" type="button" aria-label="Wildflowers Background"
+        onclick="setBackground('./images/wildflowers_panorama.png')"></button>
+
+      <button class="hotspot winter" type="button" aria-label="Winter Forest Background"
+        onclick="setBackground('./images/winter_forest_panorama.png')"></button>
+    </div>
+  </main>
 
   <script>
+    const musicFiles = [
+      "./audio/background_music.mp3",
+      "./audio/bg_track_1.mp3",
+      "./audio/bg_track_2.mp3",
+      "./audio/bg_track_3.mp3"
+    ];
+
+    let currentMusicIndex = 0;
+
+    const music = document.getElementById("backgroundMusic");
+    const musicButton = document.querySelector(".music-button");
+
+    music.src = musicFiles[currentMusicIndex];
+
     function setBackground(imagePath) {
       const cacheBuster = new Date().getTime();
-
       document.body.style.backgroundImage =
         'url("' + imagePath + '?v=' + cacheBuster + '")';
     }
 
     function toggleMusic() {
-      const music = document.getElementById("backgroundMusic");
-      const button = document.querySelector(".music-button");
-
       if (music.paused) {
         music.volume = 0.35;
 
         music.play()
-          .then(function () {
-            button.textContent = "Pause Music";
+          .then(() => {
+            musicButton.textContent = "Music: On";
           })
-          .catch(function () {
-            button.textContent = "Click Again to Start Music";
+          .catch(() => {
+            musicButton.textContent = "Music File Missing";
           });
       } else {
         music.pause();
-        button.textContent = "Start Music";
+        musicButton.textContent = "Music: Off";
       }
     }
+
+    music.addEventListener("error", function () {
+      currentMusicIndex++;
+
+      if (currentMusicIndex < musicFiles.length) {
+        music.src = musicFiles[currentMusicIndex];
+      } else {
+        musicButton.textContent = "Music File Missing";
+      }
+    });
   </script>
 </body>
 </html>
