@@ -3,9 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>TAG Enterprises LLC</title>
-
   <link rel="icon" href="data:," />
 
   <style>
@@ -23,7 +21,7 @@
     }
 
     body {
-      background-image: url("./images/main_web.png?v=999999");
+      background-image: url("./images/desert_sunset_panorama.png?v=20260512-foreground-fix-1");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -35,33 +33,33 @@
     .overlay {
       min-height: 100vh;
       width: 100%;
-      background: rgba(0,0,0,0.38);
-      padding: 32px 20px;
+      background: rgba(0, 0, 0, 0.28);
+      padding: 24px 18px 32px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 18px;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2rem, 6vw, 4.5rem);
-      text-shadow: 0 4px 12px rgba(0,0,0,0.75);
+      font-size: clamp(2rem, 6vw, 4.25rem);
+      text-shadow: 0 4px 12px rgba(0,0,0,0.8);
     }
 
     .subtitle {
-      margin-top: 10px;
-      font-size: clamp(1rem, 2.5vw, 1.5rem);
-      text-shadow: 0 3px 8px rgba(0,0,0,0.75);
+      margin-top: 8px;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
+      text-shadow: 0 3px 8px rgba(0,0,0,0.8);
     }
 
     .background-controls {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
-      margin: 26px auto 36px;
+      gap: 10px;
+      margin: 22px auto 24px;
       max-width: 1300px;
     }
 
@@ -69,20 +67,32 @@
       cursor: pointer;
       border: 2px solid rgba(255,255,255,0.9);
       border-radius: 999px;
-      padding: 10px 18px;
+      padding: 9px 16px;
       color: white;
-      background: rgba(0,0,0,0.55);
-      font-size: 1rem;
+      background: rgba(0,0,0,0.58);
+      font-size: 0.95rem;
       font-weight: bold;
       box-shadow: 0 4px 12px rgba(0,0,0,0.45);
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
     }
 
     .background-controls button:hover {
-      transform: translateY(-2px);
       background: rgba(255,255,255,0.22);
+    }
+
+    .main-artwork-wrap {
+      max-width: 1200px;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .main-artwork {
+      display: block;
+      width: 100%;
+      max-width: 1200px;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 18px;
+      box-shadow: 0 12px 34px rgba(0,0,0,0.55);
     }
 
     .games {
@@ -94,11 +104,11 @@
     }
 
     .game-card {
-      background: rgba(0,0,0,0.60);
+      background: rgba(0,0,0,0.62);
       border: 1px solid rgba(255,255,255,0.28);
       border-radius: 18px;
       padding: 22px;
-      min-height: 240px;
+      min-height: 220px;
       text-align: center;
       box-shadow: 0 10px 28px rgba(0,0,0,0.45);
     }
@@ -106,6 +116,7 @@
     .game-card img {
       width: 100%;
       max-width: 240px;
+      height: auto;
       border-radius: 12px;
       margin-bottom: 14px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.45);
@@ -117,7 +128,7 @@
     }
 
     .game-card p {
-      margin: 0 0 18px;
+      margin: 0;
       line-height: 1.45;
       font-size: 1rem;
     }
@@ -126,141 +137,91 @@
       text-align: center;
       margin-top: 36px;
       font-size: 0.95rem;
-      color: rgba(255,255,255,0.9);
+      color: rgba(255,255,255,0.92);
       text-shadow: 0 2px 6px rgba(0,0,0,0.8);
     }
 
     @media (max-width: 700px) {
+      .overlay {
+        padding: 18px 12px 28px;
+      }
+
       .background-controls {
         gap: 8px;
       }
 
       .background-controls button {
-        font-size: 0.9rem;
-        padding: 8px 14px;
+        font-size: 0.85rem;
+        padding: 8px 12px;
+      }
+
+      .main-artwork {
+        border-radius: 12px;
       }
     }
   </style>
 </head>
 
 <body>
-
   <div class="overlay">
-
     <header>
       <h1>TAG Enterprises LLC</h1>
-
-      <div class="subtitle">
-        Games, apps, and entertainment projects
-      </div>
+      <div class="subtitle">Games, apps, and entertainment projects</div>
     </header>
 
     <div class="background-controls">
+      <button type="button" onclick="setBackground('./images/coral_reef_panorama.png')">Coral Reef</button>
+      <button type="button" onclick="setBackground('./images/desert_sunset_panorama.png')">Desert Sunset</button>
+      <button type="button" onclick="setBackground('./images/space_planets_panorama.png')">Space Planets</button>
+      <button type="button" onclick="setBackground('./images/waterfall_cliffs_panorama.png')">Waterfall Cliffs</button>
+      <button type="button" onclick="setBackground('./images/wildflowers_panorama.png')">Wildflowers</button>
+      <button type="button" onclick="setBackground('./images/winter_forest_panorama.png')">Winter Forest</button>
+    </div>
 
-      <button onclick="setBackground('./images/main_web.png')">
-        Main
-      </button>
-
-      <button onclick="setBackground('./images/coral_reef_panorama.png')">
-        Coral Reef
-      </button>
-
-      <button onclick="setBackground('./images/desert_sunset_panorama.png')">
-        Desert Sunset
-      </button>
-
-      <button onclick="setBackground('./images/space_planets_panorama.png')">
-        Space Planets
-      </button>
-
-      <button onclick="setBackground('./images/waterfall_cliffs_panorama.png')">
-        Waterfall Cliffs
-      </button>
-
-      <button onclick="setBackground('./images/wildflowers_panorama.png')">
-        Wildflowers
-      </button>
-
-      <button onclick="setBackground('./images/winter_forest_panorama.png')">
-        Winter Forest
-      </button>
-
+    <div class="main-artwork-wrap">
+      <img
+        class="main-artwork"
+        src="./images/main_web.png?v=20260512-foreground-fix-1"
+        alt="TAG Enterprises LLC game collection"
+      />
     </div>
 
     <main class="games">
-
       <section class="game-card">
-
-        <img
-          src="./images/tag_21_screenshot.jpg?v=5"
-          alt="TAG-21 Screenshot"
-        />
-
+        <img src="./images/tag_21_screenshot.jpg?v=20260512-1" alt="TAG-21 Screenshot" />
         <h2>TAG-21</h2>
-
-        <p>
-          A blackjack-inspired mobile game featuring strategic betting,
-          dealer play, and robot opponents.
-        </p>
-
+        <p>A blackjack-inspired mobile game featuring strategic betting, dealer play, and robot opponents.</p>
       </section>
 
       <section class="game-card">
-
-        <img
-          src="./images/tagyz_screenshot.jpg?v=5"
-          alt="TAG-YZ Screenshot"
-        />
-
+        <img src="./images/tagyz_screenshot.jpg?v=20260512-1" alt="TAG-YZ Screenshot" />
         <h2>TAG-YZ</h2>
-
-        <p>
-          A modern dice strategy game inspired by classic scorecard gameplay.
-        </p>
-
+        <p>A modern dice strategy game inspired by classic scorecard gameplay.</p>
       </section>
 
       <section class="game-card">
-
         <h2>Mahjong Collection</h2>
-
-        <p>
-          Mobile mahjong experiences currently under development.
-        </p>
-
+        <p>Mobile mahjong experiences currently under development.</p>
       </section>
 
       <section class="game-card">
-
         <h2>Domino Masters</h2>
-
-        <p>
-          Domino-based games designed specifically for phone gameplay.
-        </p>
-
+        <p>Domino-based games designed specifically for phone gameplay.</p>
       </section>
 
       <section class="game-card">
-
         <h2>Card Collection</h2>
-
-        <p>
-          A future collection of classic card games for mobile devices.
-        </p>
-
+        <p>A future collection of classic card games for mobile devices.</p>
       </section>
-
     </main>
 
     <footer>
       © 2026 TAG Enterprises LLC
     </footer>
-
   </div>
 
   <script>
     function setBackground(imagePath) {
-
       const cacheBuster = new Date().getTime();
 
       document.body.style.backgroundImage =
@@ -272,6 +233,5 @@
       document.body.style.backgroundAttachment = 'fixed';
     }
   </script>
-
 </body>
 </html>
