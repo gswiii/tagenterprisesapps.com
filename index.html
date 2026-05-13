@@ -23,7 +23,7 @@
     }
 
     body {
-      background-image: url("./images/main_web.png?v=3");
+      background-image: url("./images/main_web.png?v=999999");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -32,24 +32,11 @@
       transition: background-image 0.35s ease-in-out;
     }
 
-    .deployment-banner {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 99999;
-      background: lime;
-      color: black;
-      font-weight: bold;
-      padding: 10px 14px;
-      border-bottom-right-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-
     .overlay {
       min-height: 100vh;
       width: 100%;
       background: rgba(0,0,0,0.38);
-      padding: 60px 20px 32px;
+      padding: 32px 20px;
     }
 
     header {
@@ -135,25 +122,6 @@
       font-size: 1rem;
     }
 
-    .game-card a {
-      display: inline-block;
-      text-decoration: none;
-      color: white;
-      background: #0b66c3;
-      border-radius: 12px;
-      padding: 10px 16px;
-      font-weight: bold;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
-
-    .game-card a:hover {
-      background: #084f98;
-      transform: translateY(-2px);
-    }
-
     footer {
       text-align: center;
       margin-top: 36px;
@@ -161,14 +129,21 @@
       color: rgba(255,255,255,0.9);
       text-shadow: 0 2px 6px rgba(0,0,0,0.8);
     }
+
+    @media (max-width: 700px) {
+      .background-controls {
+        gap: 8px;
+      }
+
+      .background-controls button {
+        font-size: 0.9rem;
+        padding: 8px 14px;
+      }
+    }
   </style>
 </head>
 
 <body>
-
-  <div class="deployment-banner">
-    LIVE VERSION WITH IMAGE FIXES
-  </div>
 
   <div class="overlay">
 
@@ -217,7 +192,7 @@
       <section class="game-card">
 
         <img
-          src="./images/tag_21_screenshot.jpg"
+          src="./images/tag_21_screenshot.jpg?v=5"
           alt="TAG-21 Screenshot"
         />
 
@@ -233,7 +208,7 @@
       <section class="game-card">
 
         <img
-          src="./images/tagyz_screenshot.jpg"
+          src="./images/tagyz_screenshot.jpg?v=5"
           alt="TAG-YZ Screenshot"
         />
 
@@ -241,6 +216,36 @@
 
         <p>
           A modern dice strategy game inspired by classic scorecard gameplay.
+        </p>
+
+      </section>
+
+      <section class="game-card">
+
+        <h2>Mahjong Collection</h2>
+
+        <p>
+          Mobile mahjong experiences currently under development.
+        </p>
+
+      </section>
+
+      <section class="game-card">
+
+        <h2>Domino Masters</h2>
+
+        <p>
+          Domino-based games designed specifically for phone gameplay.
+        </p>
+
+      </section>
+
+      <section class="game-card">
+
+        <h2>Card Collection</h2>
+
+        <p>
+          A future collection of classic card games for mobile devices.
         </p>
 
       </section>
