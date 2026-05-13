@@ -3,7 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>TAG Enterprises LLC</title>
+
   <link rel="icon" href="data:," />
 
   <style>
@@ -21,37 +23,50 @@
     }
 
     body {
-      background-image: url("./main_web.png?v=20260512-final");
+      background-image: url("./main_web.png?v=20260512v2");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       overflow-x: hidden;
-      transition: background-image 0.4s ease-in-out;
+      transition: background-image 0.35s ease-in-out;
+    }
+
+    .deployment-banner {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 99999;
+      background: lime;
+      color: black;
+      font-weight: bold;
+      padding: 10px 14px;
+      border-bottom-right-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
     }
 
     .overlay {
       min-height: 100vh;
       width: 100%;
-      background: rgba(0, 0, 0, 0.38);
-      padding: 32px 20px;
+      background: rgba(0,0,0,0.38);
+      padding: 60px 20px 32px;
     }
 
     header {
       text-align: center;
-      margin-bottom: 28px;
+      margin-bottom: 30px;
     }
 
     h1 {
       margin: 0;
       font-size: clamp(2rem, 6vw, 4.5rem);
-      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.75);
+      text-shadow: 0 4px 12px rgba(0,0,0,0.75);
     }
 
     .subtitle {
       margin-top: 10px;
       font-size: clamp(1rem, 2.5vw, 1.5rem);
-      text-shadow: 0 3px 8px rgba(0, 0, 0, 0.75);
+      text-shadow: 0 3px 8px rgba(0,0,0,0.75);
     }
 
     .background-controls {
@@ -59,28 +74,28 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 12px;
-      margin: 24px auto 34px;
-      max-width: 1200px;
+      margin: 26px auto 36px;
+      max-width: 1300px;
     }
 
     .background-controls button {
       cursor: pointer;
-      border: 2px solid rgba(255, 255, 255, 0.85);
+      border: 2px solid rgba(255,255,255,0.9);
       border-radius: 999px;
       padding: 10px 18px;
       color: white;
-      background: rgba(0, 0, 0, 0.55);
+      background: rgba(0,0,0,0.55);
       font-size: 1rem;
       font-weight: bold;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.45);
       transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
     .background-controls button:hover {
-      background: rgba(255, 255, 255, 0.22);
       transform: translateY(-2px);
+      background: rgba(255,255,255,0.22);
     }
 
     .games {
@@ -92,22 +107,21 @@
     }
 
     .game-card {
-      background: rgba(0, 0, 0, 0.60);
-      border: 1px solid rgba(255, 255, 255, 0.28);
+      background: rgba(0,0,0,0.60);
+      border: 1px solid rgba(255,255,255,0.28);
       border-radius: 18px;
       padding: 22px;
       min-height: 240px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
       text-align: center;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
     }
 
     .game-card img {
       width: 100%;
       max-width: 240px;
-      height: auto;
       border-radius: 12px;
       margin-bottom: 14px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.45);
     }
 
     .game-card h2 {
@@ -125,14 +139,14 @@
       display: inline-block;
       text-decoration: none;
       color: white;
-      font-weight: bold;
       background: #0b66c3;
       border-radius: 12px;
       padding: 10px 16px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.35);
       transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
     .game-card a:hover {
@@ -142,10 +156,10 @@
 
     footer {
       text-align: center;
-      margin-top: 34px;
+      margin-top: 36px;
       font-size: 0.95rem;
-      color: rgba(255, 255, 255, 0.9);
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+      color: rgba(255,255,255,0.9);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.8);
     }
 
     @media (max-width: 700px) {
@@ -162,99 +176,124 @@
 </head>
 
 <body>
+
+  <div class="deployment-banner">
+    TEST BUILD GREEN MAY 12 VERSION 2
+  </div>
+
   <div class="overlay">
+
     <header>
       <h1>TAG Enterprises LLC</h1>
+
       <div class="subtitle">
         Games, apps, and entertainment projects
       </div>
     </header>
 
     <div class="background-controls">
-      <button type="button" onclick="setBackground('./main_web.png')">
+
+      <button onclick="setBackground('./main_web.png')">
         Main
       </button>
 
-      <button type="button" onclick="setBackground('./coral_reef_panorama.png')">
+      <button onclick="setBackground('./coral_reef_panorama.png')">
         Coral Reef
       </button>
 
-      <button type="button" onclick="setBackground('./desert_sunset_panorama.png')">
+      <button onclick="setBackground('./desert_sunset_panorama.png')">
         Desert Sunset
       </button>
 
-      <button type="button" onclick="setBackground('./space_planets_panorama.png')">
+      <button onclick="setBackground('./space_planets_panorama.png')">
         Space Planets
       </button>
 
-      <button type="button" onclick="setBackground('./waterfall_cliffs_panorama.png')">
+      <button onclick="setBackground('./waterfall_cliffs_panorama.png')">
         Waterfall Cliffs
       </button>
 
-      <button type="button" onclick="setBackground('./wildflowers_panorama.png')">
+      <button onclick="setBackground('./wildflowers_panorama.png')">
         Wildflowers
       </button>
 
-      <button type="button" onclick="setBackground('./winter_forest_panorama.png')">
+      <button onclick="setBackground('./winter_forest_panorama.png')">
         Winter Forest
       </button>
+
     </div>
 
-    <main id="games-area" class="games">
+    <main class="games">
 
       <section class="game-card">
-        <img src="./tag_21_screenshot.jpg?v=1" alt="TAG-21 Screenshot" />
+
+        <img
+          src="./tag_21_screenshot.jpg?v=2"
+          alt="TAG-21 Screenshot"
+        />
 
         <h2>TAG-21</h2>
 
         <p>
-          A blackjack-style strategy game designed for mobile play.
+          A blackjack-inspired mobile game featuring strategic betting,
+          dealer play, and robot opponents.
         </p>
 
         <a href="#" onclick="return false;">
           Coming Soon
         </a>
+
       </section>
 
       <section class="game-card">
-        <img src="./tagyz_screenshot.jpg?v=1" alt="TAG-YZ Screenshot" />
+
+        <img
+          src="./tagyz_screenshot.jpg?v=2"
+          alt="TAG-YZ Screenshot"
+        />
 
         <h2>TAG-YZ</h2>
 
         <p>
-          A fast-paced dice game inspired by classic scorecard gameplay.
+          A modern dice strategy game inspired by classic scorecard gameplay.
         </p>
 
         <a href="#" onclick="return false;">
           Coming Soon
         </a>
+
       </section>
 
       <section class="game-card">
+
         <h2>Mahjong Collection</h2>
 
         <p>
-          Mobile-friendly mahjong games currently in development.
+          Mobile mahjong experiences currently under development.
         </p>
 
         <a href="#" onclick="return false;">
           Coming Soon
         </a>
+
       </section>
 
       <section class="game-card">
+
         <h2>Domino Masters</h2>
 
         <p>
-          Domino games designed for quick and engaging phone play.
+          Domino-based games designed specifically for phone gameplay.
         </p>
 
         <a href="#" onclick="return false;">
           Coming Soon
         </a>
+
       </section>
 
       <section class="game-card">
+
         <h2>Card Collection</h2>
 
         <p>
@@ -264,6 +303,7 @@
         <a href="#" onclick="return false;">
           Coming Soon
         </a>
+
       </section>
 
     </main>
@@ -271,15 +311,23 @@
     <footer>
       © 2026 TAG Enterprises LLC
     </footer>
+
   </div>
 
   <script>
     function setBackground(imagePath) {
+
       const cacheBuster = new Date().getTime();
 
       document.body.style.backgroundImage =
         'url("' + imagePath + '?v=' + cacheBuster + '")';
+
+      document.body.style.backgroundSize = 'cover';
+      document.body.style.backgroundPosition = 'center center';
+      document.body.style.backgroundRepeat = 'no-repeat';
+      document.body.style.backgroundAttachment = 'fixed';
     }
   </script>
+
 </body>
 </html>
