@@ -6,7 +6,6 @@
   <title>TAG Enterprises LLC</title>
 
   <style>
-
     * {
       margin: 0;
       padding: 0;
@@ -18,448 +17,281 @@
     }
 
     body {
-
-      font-family: Arial, Helvetica, sans-serif;
+      background: #020812;
       color: white;
+      font-family: Arial, Helvetica, sans-serif;
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
-
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.20),
-          rgba(0,0,0,0.45)
-        ),
-        url("images/main_web.png");
-
-      background-size: cover;
-      background-position: top center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
     }
 
-    .page-overlay {
-
-      min-height: 100vh;
-
-      background:
-        linear-gradient(
-          rgba(3, 8, 15, 0.15),
-          rgba(3, 8, 15, 0.45)
-        );
-
-      backdrop-filter: blur(1px);
-    }
-
-    header {
-
-      padding: 30px 20px;
-      text-align: center;
-    }
-
-    .hero-buttons {
-
+    .page {
+      width: 100%;
       display: flex;
       justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 30px;
+      background: #020812;
     }
 
-    .hero-button {
-
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-
-      min-width: 220px;
-
-      padding: 15px 26px;
-
-      border: none;
-      border-radius: 8px;
-
-      background:
-        linear-gradient(
-          180deg,
-          #1d8fff,
-          #0f5ec8
-        );
-
-      color: white;
-
-      text-decoration: none;
-
-      font-size: 1.05rem;
-      font-weight: 800;
-
-      cursor: pointer;
-
-      transition: all 0.25s ease;
-
-      box-shadow:
-        0 10px 22px rgba(0,0,0,0.35),
-        inset 0 1px 0 rgba(255,255,255,0.35);
+    .main-wrap {
+      position: relative;
+      width: min(100%, 1024px);
     }
 
-    .hero-button:hover {
-
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 14px 28px rgba(0,0,0,0.45),
-        0 0 18px rgba(29,143,255,0.45);
-    }
-
-    .music-status {
-
-      margin-top: 18px;
-
-      text-align: center;
-
-      color: #cfe7ff;
-
-      font-size: 1rem;
-      font-weight: 700;
-
-      text-shadow:
-        0 2px 6px rgba(0,0,0,0.8);
-    }
-
-    .background-picker {
-
-      max-width: 1020px;
-
-      margin: 34px auto 0;
-
-      padding: 22px;
-
-      border-radius: 16px;
-
-      background:
-        rgba(4, 10, 18, 0.72);
-
-      border:
-        1px solid rgba(255,255,255,0.10);
-
-      box-shadow:
-        0 16px 34px rgba(0,0,0,0.40);
-
-      backdrop-filter: blur(8px);
-    }
-
-    .background-picker-title {
-
-      text-align: center;
-
-      margin-bottom: 18px;
-
-      font-size: 1.1rem;
-      font-weight: 800;
-
-      color: white;
-    }
-
-    .background-row {
-
-      display: grid;
-
-      grid-template-columns: repeat(6, 1fr);
-
-      gap: 14px;
-    }
-
-    .background-thumb {
-
+    .main-image {
       width: 100%;
-      height: 92px;
-
-      object-fit: cover;
-
-      border-radius: 8px;
-
-      border:
-        2px solid rgba(255,255,255,0.28);
-
-      cursor: pointer;
-
-      transition: all 0.2s ease;
-
-      background: #000;
-    }
-
-    .background-thumb:hover {
-
-      transform: translateY(-2px);
-
-      border-color: #58a6ff;
-    }
-
-    .background-thumb.selected {
-
-      border-color: #39ff5a;
-
-      box-shadow:
-        0 0 0 2px rgba(57,255,90,0.25);
-    }
-
-    section {
-
-      padding: 80px 20px 40px;
-
-      max-width: 1180px;
-
-      margin: 0 auto;
-    }
-
-    .hidden-section {
-      display: none;
-    }
-
-    .visible-section {
+      height: auto;
       display: block;
     }
 
-    .info-box {
-
-      background:
-        rgba(4, 10, 18, 0.82);
-
-      border:
-        1px solid rgba(255,255,255,0.10);
-
-      border-radius: 14px;
-
-      padding: 30px;
-
-      line-height: 1.7;
-
-      box-shadow:
-        0 16px 34px rgba(0,0,0,0.40);
-
-      backdrop-filter: blur(8px);
+    .hotspot {
+      position: absolute;
+      display: block;
+      cursor: pointer;
+      background: rgba(255,255,255,0);
+      border: none;
+      text-decoration: none;
     }
 
-    .info-box a {
+    .hotspot:focus-visible {
+      outline: 3px solid #58a6ff;
+      border-radius: 8px;
+    }
 
+    /* Top navigation buttons */
+    .btn-games {
+      left: 14.1%;
+      top: 9.7%;
+      width: 11.7%;
+      height: 2.7%;
+    }
+
+    .btn-backgrounds {
+      left: 25.7%;
+      top: 9.7%;
+      width: 19.5%;
+      height: 2.7%;
+    }
+
+    .btn-support {
+      left: 45.3%;
+      top: 9.7%;
+      width: 14.6%;
+      height: 2.7%;
+    }
+
+    .btn-privacy {
+      left: 60.0%;
+      top: 9.7%;
+      width: 14.3%;
+      height: 2.7%;
+    }
+
+    .btn-contact {
+      left: 74.3%;
+      top: 9.7%;
+      width: 15.5%;
+      height: 2.7%;
+    }
+
+    /* Main action buttons */
+    .btn-view-games {
+      left: 27.4%;
+      top: 14.1%;
+      width: 18.7%;
+      height: 3.0%;
+    }
+
+    .btn-music {
+      left: 47.7%;
+      top: 14.1%;
+      width: 20.2%;
+      height: 3.0%;
+    }
+
+    /* Background thumbnail buttons */
+    .bg-desert {
+      left: 8.6%;
+      top: 24.6%;
+      width: 12.2%;
+      height: 5.6%;
+    }
+
+    .bg-coral {
+      left: 22.1%;
+      top: 24.6%;
+      width: 12.2%;
+      height: 5.6%;
+    }
+
+    .bg-space {
+      left: 35.6%;
+      top: 24.6%;
+      width: 12.2%;
+      height: 5.6%;
+    }
+
+    .bg-waterfall {
+      left: 49.1%;
+      top: 24.6%;
+      width: 12.2%;
+      height: 5.6%;
+    }
+
+    .bg-wildflowers {
+      left: 62.5%;
+      top: 24.6%;
+      width: 12.2%;
+      height: 5.6%;
+    }
+
+    .bg-winter {
+      left: 76.0%;
+      top: 24.6%;
+      width: 12.2%;
+      height: 5.6%;
+    }
+
+    .music-status {
+      position: fixed;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: none;
+      max-width: 92vw;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: rgba(0, 0, 0, 0.72);
+      color: #d8ecff;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.45);
+      text-align: center;
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.68);
+    }
+
+    .modal-backdrop.visible {
+      display: flex;
+    }
+
+    .modal {
+      width: min(680px, 94vw);
+      max-height: 86vh;
+      overflow-y: auto;
+      padding: 28px;
+      border-radius: 18px;
+      background:
+        linear-gradient(145deg, rgba(12,25,43,0.97), rgba(5,12,23,0.96));
+      border: 1px solid rgba(120,170,230,0.34);
+      box-shadow: 0 18px 46px rgba(0,0,0,0.62);
+      color: #f0f6ff;
+      line-height: 1.65;
+    }
+
+    .modal h2 {
+      color: #58a6ff;
+      margin-bottom: 16px;
+      text-shadow: 0 0 12px rgba(31,111,235,0.65);
+    }
+
+    .modal a {
       color: #8ecbff;
-      font-weight: bold;
+      font-weight: 800;
+    }
+
+    .modal-close {
+      margin-top: 22px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #1683ef, #0d58b9);
+      color: white;
+      font-weight: 800;
+      cursor: pointer;
     }
 
     footer {
-
       text-align: center;
-
-      padding: 34px 20px;
-
-      color: #dbe7f5;
-
+      padding: 18px 10px 26px;
+      color: #dce8f6;
       font-size: 0.95rem;
-
-      text-shadow:
-        0 2px 6px rgba(0,0,0,0.75);
-    }
-
-    @media (max-width: 900px) {
-
-      .background-row {
-
-        grid-template-columns: repeat(3, 1fr);
-      }
+      background: #020812;
     }
 
     @media (max-width: 700px) {
-
-      body {
-
-        background-attachment: scroll;
+      .main-wrap {
+        width: 100%;
       }
 
-      .background-row {
-
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .background-thumb {
-
-        height: 80px;
-      }
-
-      .hero-button {
-
-        width: min(320px, 90vw);
+      .music-status {
+        font-size: 0.82rem;
       }
     }
-
   </style>
 </head>
 
 <body>
 
-<div class="page-overlay">
+<audio id="bg-music"></audio>
 
-  <audio id="bg-music"></audio>
+<div class="page">
+  <main class="main-wrap" id="top">
+    <img
+      class="main-image"
+      src="images/main_web.png"
+      alt="TAG Enterprises LLC Website Main Screen"
+    />
 
-  <header>
+    <a class="hotspot btn-games" href="#games-area" title="Games"></a>
+    <a class="hotspot btn-backgrounds" href="#background-area" title="Backgrounds"></a>
+    <button class="hotspot btn-support" onclick="openModal('support')" title="Support"></button>
+    <button class="hotspot btn-privacy" onclick="openModal('privacy')" title="Privacy"></button>
+    <button class="hotspot btn-contact" onclick="openModal('contact')" title="Contact"></button>
 
-    <div class="hero-buttons">
+    <a class="hotspot btn-view-games" href="#games-area" title="View Our Games"></a>
+    <button class="hotspot btn-music" onclick="toggleMusic()" title="Play / Pause Music"></button>
 
-      <a
-        class="hero-button"
-        href="#games"
-        onclick="showSection('games');">
+    <button class="hotspot bg-desert" onclick="setSiteBackground('images/desert_sunset_panorama.png')" title="Desert Background"></button>
+    <button class="hotspot bg-coral" onclick="setSiteBackground('images/coral_reef_panorama.png')" title="Coral Reef Background"></button>
+    <button class="hotspot bg-space" onclick="setSiteBackground('images/space_planets_panorama.png')" title="Space Background"></button>
+    <button class="hotspot bg-waterfall" onclick="setSiteBackground('images/waterfall_cliffs_panorama.png')" title="Waterfall Background"></button>
+    <button class="hotspot bg-wildflowers" onclick="setSiteBackground('images/wildflowers_panorama.png')" title="Wildflowers Background"></button>
+    <button class="hotspot bg-winter" onclick="setSiteBackground('images/winter_forest_panorama.png')" title="Winter Forest Background"></button>
 
-        View Our Games
-      </a>
-
-      <button
-        class="hero-button"
-        onclick="toggleMusic()"
-        type="button">
-
-        Play / Pause Music
-      </button>
-
-    </div>
-
-    <div
-      id="music-status"
-      class="music-status">
-
-      Music is off
-    </div>
-
-    <div
-      id="backgrounds"
-      class="background-picker">
-
-      <div class="background-picker-title">
-        Choose Website Background
-      </div>
-
-      <div
-        class="background-row"
-        id="background-row">
-
-      </div>
-
-    </div>
-
-  </header>
-
-  <section
-    id="games"
-    class="visible-section">
-
-  </section>
-
-  <section
-    id="support"
-    class="hidden-section">
-
-    <div class="info-box">
-
-      <h2>Support</h2>
-
-      <br/>
-
-      If you experience issues with any TAG Enterprises LLC game,
-      please contact support and include your device model,
-      Android version, screenshots, and a description of the issue.
-
-      <br/><br/>
-
-      Support Email:
-
-      <br/><br/>
-
-      <a href="mailto:support@tagenterprisesapps.com">
-        support@tagenterprisesapps.com
-      </a>
-
-    </div>
-
-  </section>
-
-  <section
-    id="privacy"
-    class="hidden-section">
-
-    <div class="info-box">
-
-      <h2>Privacy</h2>
-
-      <br/>
-
-      TAG Enterprises LLC respects your privacy.
-
-      <br/><br/>
-
-      Our applications may use third-party services such as
-      analytics, advertising, or platform integrations.
-
-      <br/><br/>
-
-      We do not knowingly collect personally identifiable
-      information except where necessary for functionality,
-      support, or legal compliance.
-
-    </div>
-
-  </section>
-
-  <section
-    id="contact"
-    class="hidden-section">
-
-    <div class="info-box">
-
-      <h2>Contact</h2>
-
-      <br/>
-
-      TAG Enterprises LLC
-
-      <br/><br/>
-
-      General Inquiries:
-
-      <br/><br/>
-
-      <a href="mailto:contact@tagenterprisesapps.com">
-        contact@tagenterprisesapps.com
-      </a>
-
-      <br/><br/>
-
-      Business and Media:
-
-      <br/><br/>
-
-      <a href="mailto:business@tagenterprisesapps.com">
-        business@tagenterprisesapps.com
-      </a>
-
-    </div>
-
-  </section>
-
-  <footer>
-    © 2026 TAG Enterprises LLC. All rights reserved.
-  </footer>
-
+    <div id="background-area" style="position:absolute; top:21%; left:0;"></div>
+    <div id="games-area" style="position:absolute; top:33%; left:0;"></div>
+  </main>
 </div>
 
+<div id="music-status" class="music-status">Music is off</div>
+
+<div id="modal-backdrop" class="modal-backdrop" onclick="closeModalFromBackdrop(event)">
+  <div class="modal">
+    <div id="modal-content"></div>
+    <button class="modal-close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<footer>
+  © 2026 TAG Enterprises LLC. All rights reserved.
+</footer>
+
 <script>
-
-  const music =
-    document.getElementById("bg-music");
-
-  const musicStatus =
-    document.getElementById("music-status");
+  const music = document.getElementById("bg-music");
+  const musicStatus = document.getElementById("music-status");
+  const modalBackdrop = document.getElementById("modal-backdrop");
+  const modalContent = document.getElementById("modal-content");
 
   const tracks = [
-
     "audio/bg_track_2.mp3",
     "audio/bg_track_3.mp3",
     "audio/bg_track_4.mp3",
@@ -468,41 +300,6 @@
     "audio/bg_track_7.mp3",
     "audio/bg_track_8.mp3",
     "audio/bg_track_9.mp3"
-
-  ];
-
-  const backgrounds = [
-
-    {
-      name: "Desert",
-      file: "images/desert_sunset_panorama.png"
-    },
-
-    {
-      name: "Coral Reef",
-      file: "images/coral_reef_panorama.png"
-    },
-
-    {
-      name: "Space",
-      file: "images/space_planets_panorama.png"
-    },
-
-    {
-      name: "Waterfall",
-      file: "images/waterfall_cliffs_panorama.png"
-    },
-
-    {
-      name: "Wildflowers",
-      file: "images/wildflowers_panorama.png"
-    },
-
-    {
-      name: "Winter Forest",
-      file: "images/winter_forest_panorama.png"
-    }
-
   ];
 
   let shuffledTracks = [];
@@ -511,31 +308,36 @@
   let currentTrackName = "";
 
   function shuffleArray(array) {
-
     const copy = [...array];
 
     for (let i = copy.length - 1; i > 0; i--) {
-
-      const j =
-        Math.floor(Math.random() * (i + 1));
-
-      [copy[i], copy[j]] =
-        [copy[j], copy[i]];
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
     }
 
     return copy;
   }
 
   function buildPlaylist() {
+    const previousTrack = currentTrackName;
+    shuffledTracks = shuffleArray(tracks);
 
-    shuffledTracks =
-      shuffleArray(tracks);
+    if (
+      previousTrack &&
+      shuffledTracks.length > 1 &&
+      shuffledTracks[0] === previousTrack
+    ) {
+      const swapIndex =
+        Math.floor(Math.random() * (shuffledTracks.length - 1)) + 1;
+
+      [shuffledTracks[0], shuffledTracks[swapIndex]] =
+        [shuffledTracks[swapIndex], shuffledTracks[0]];
+    }
 
     currentIndex = 0;
   }
 
   function getTrackLabel(trackPath) {
-
     return trackPath
       .replace("audio/", "")
       .replace(".mp3", "")
@@ -543,212 +345,130 @@
       .toUpperCase();
   }
 
+  function showMusicStatus(text) {
+    musicStatus.textContent = text;
+    musicStatus.style.display = "block";
+  }
+
   function playCurrentTrack() {
-
-    if (
-      currentIndex >= shuffledTracks.length
-    ) {
-
+    if (currentIndex >= shuffledTracks.length) {
       buildPlaylist();
     }
 
-    currentTrackName =
-      shuffledTracks[currentIndex];
+    currentTrackName = shuffledTracks[currentIndex];
 
-    music.src =
-      currentTrackName;
-
+    music.src = currentTrackName;
     music.volume = 0.30;
 
     music.play()
-
       .then(() => {
-
-        musicStatus.textContent =
-          "♫ Playing: " +
-          getTrackLabel(currentTrackName);
-
+        showMusicStatus("♫ Playing: " + getTrackLabel(currentTrackName));
       })
-
       .catch(() => {
-
-        musicStatus.textContent =
-          "Click Play / Pause Music to start music";
+        showMusicStatus("Click Play / Pause Music to start music");
       });
   }
 
   function toggleMusic() {
-
     if (!initialized) {
-
       buildPlaylist();
       playCurrentTrack();
-
       initialized = true;
-
       return;
     }
 
     if (music.paused) {
-
       music.play()
-
         .then(() => {
-
-          musicStatus.textContent =
-            "♫ Playing: " +
-            getTrackLabel(currentTrackName);
-
+          showMusicStatus("♫ Playing: " + getTrackLabel(currentTrackName));
+        })
+        .catch(() => {
+          showMusicStatus("Click Play / Pause Music to start music");
         });
-
     } else {
-
       music.pause();
-
-      musicStatus.textContent =
-        "Music paused";
+      showMusicStatus("Music paused");
     }
   }
 
   music.addEventListener("ended", () => {
-
     currentIndex++;
-
     playCurrentTrack();
   });
 
-  function setWebsiteBackground(
-    backgroundFile,
-    selectedImage
-  ) {
-
+  function setSiteBackground(imagePath) {
     document.body.style.backgroundImage =
-
-      'linear-gradient(rgba(0,0,0,0.20), rgba(0,0,0,0.45)), url("' +
-
-      backgroundFile +
-
+      'linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.55)), url("' +
+      imagePath +
       '")';
 
-    document
-      .querySelectorAll(".background-thumb")
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
+    document.body.style.backgroundAttachment = "fixed";
 
-      .forEach(img => {
-
-        img.classList.remove("selected");
-      });
-
-    if (selectedImage) {
-
-      selectedImage.classList.add("selected");
-    }
-
-    localStorage.setItem(
-      "selectedBackground",
-      backgroundFile
-    );
+    localStorage.setItem("selectedBackground", imagePath);
   }
 
-  function loadBackgroundPicker() {
-
-    const row =
-      document.getElementById("background-row");
-
-    const savedBackground =
-      localStorage.getItem(
-        "selectedBackground"
-      );
-
-    backgrounds.forEach(background => {
-
-      const img =
-        document.createElement("img");
-
-      img.src =
-        background.file;
-
-      img.alt =
-        background.name;
-
-      img.title =
-        background.name;
-
-      img.className =
-        "background-thumb";
-
-      if (
-        savedBackground === background.file
-      ) {
-
-        img.classList.add("selected");
-      }
-
-      img.onclick = () => {
-
-        setWebsiteBackground(
-          background.file,
-          img
-        );
-      };
-
-      row.appendChild(img);
-    });
+  function loadSavedBackground() {
+    const savedBackground = localStorage.getItem("selectedBackground");
 
     if (savedBackground) {
-
-      setWebsiteBackground(
-        savedBackground,
-        document.querySelector(
-          ".background-thumb.selected"
-        )
-      );
+      setSiteBackground(savedBackground);
     }
   }
 
-  function showSection(sectionName) {
+  function openModal(type) {
+    if (type === "support") {
+      modalContent.innerHTML =
+        "<h2>Support</h2>" +
+        "<p>If you experience issues with any TAG Enterprises LLC game, please contact support and include your device model, Android version, screenshots if available, and a description of the issue.</p>" +
+        "<br/>" +
+        "<p>Support Email:<br/><a href='mailto:support@tagenterprisesapps.com'>support@tagenterprisesapps.com</a></p>";
+    }
 
-    const sections = [
+    if (type === "privacy") {
+      modalContent.innerHTML =
+        "<h2>Privacy</h2>" +
+        "<p>TAG Enterprises LLC respects your privacy.</p>" +
+        "<br/>" +
+        "<p>Our applications may use third-party services such as advertising, analytics, or platform services provided by Google Play.</p>" +
+        "<br/>" +
+        "<p>We do not knowingly collect personally identifiable information except where required for application functionality, support, or legal compliance.</p>" +
+        "<br/>" +
+        "<p>Additional privacy policy updates may be published as applications evolve and new services are integrated.</p>";
+    }
 
-      "games",
-      "support",
-      "privacy",
-      "contact"
-    ];
+    if (type === "contact") {
+      modalContent.innerHTML =
+        "<h2>Contact</h2>" +
+        "<p>TAG Enterprises LLC</p>" +
+        "<br/>" +
+        "<p>General Inquiries:<br/><a href='mailto:contact@tagenterprisesapps.com'>contact@tagenterprisesapps.com</a></p>" +
+        "<br/>" +
+        "<p>Business and Media:<br/><a href='mailto:business@tagenterprisesapps.com'>business@tagenterprisesapps.com</a></p>";
+    }
 
-    sections.forEach(name => {
-
-      const section =
-        document.getElementById(name);
-
-      if (!section) {
-        return;
-      }
-
-      if (name === sectionName) {
-
-        section.classList.remove(
-          "hidden-section"
-        );
-
-        section.classList.add(
-          "visible-section"
-        );
-
-      } else {
-
-        section.classList.remove(
-          "visible-section"
-        );
-
-        section.classList.add(
-          "hidden-section"
-        );
-      }
-    });
+    modalBackdrop.classList.add("visible");
   }
 
-  loadBackgroundPicker();
+  function closeModal() {
+    modalBackdrop.classList.remove("visible");
+  }
 
+  function closeModalFromBackdrop(event) {
+    if (event.target === modalBackdrop) {
+      closeModal();
+    }
+  }
+
+  document.addEventListener("keydown", function(event) {
+    if (event.key === "Escape") {
+      closeModal();
+    }
+  });
+
+  loadSavedBackground();
 </script>
 
 </body>
