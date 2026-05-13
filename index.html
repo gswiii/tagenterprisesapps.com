@@ -21,31 +21,20 @@
     }
 
     body {
-      background-image: url("./main_web.png?v=20260512-test-1");
+      background-image: url("./main_web.png?v=20260512-final");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       overflow-x: hidden;
-    }
-
-    .test-build-banner {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 99999;
-      background: red;
-      color: white;
-      padding: 10px 14px;
-      font-weight: bold;
-      font-size: 14px;
+      transition: background-image 0.4s ease-in-out;
     }
 
     .overlay {
       min-height: 100vh;
       width: 100%;
       background: rgba(0, 0, 0, 0.38);
-      padding: 56px 20px 32px;
+      padding: 32px 20px;
     }
 
     header {
@@ -71,7 +60,7 @@
       justify-content: center;
       gap: 12px;
       margin: 24px auto 34px;
-      max-width: 1000px;
+      max-width: 1200px;
     }
 
     .background-controls button {
@@ -84,32 +73,46 @@
       font-size: 1rem;
       font-weight: bold;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .background-controls button:hover {
       background: rgba(255, 255, 255, 0.22);
+      transform: translateY(-2px);
     }
 
     .games {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .game-card {
-      background: rgba(0, 0, 0, 0.58);
+      background: rgba(0, 0, 0, 0.60);
       border: 1px solid rgba(255, 255, 255, 0.28);
       border-radius: 18px;
       padding: 22px;
-      min-height: 180px;
+      min-height: 240px;
       box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+      text-align: center;
+    }
+
+    .game-card img {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      border-radius: 12px;
+      margin-bottom: 14px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
     }
 
     .game-card h2 {
       margin: 0 0 12px;
-      font-size: 1.55rem;
+      font-size: 1.6rem;
     }
 
     .game-card p {
@@ -127,10 +130,14 @@
       border-radius: 12px;
       padding: 10px 16px;
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .game-card a:hover {
       background: #084f98;
+      transform: translateY(-2px);
     }
 
     footer {
@@ -140,58 +147,125 @@
       color: rgba(255, 255, 255, 0.9);
       text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
     }
+
+    @media (max-width: 700px) {
+      .background-controls {
+        gap: 8px;
+      }
+
+      .background-controls button {
+        font-size: 0.9rem;
+        padding: 8px 14px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="test-build-banner">
-    TEST BUILD MAY 12
-  </div>
-
   <div class="overlay">
     <header>
       <h1>TAG Enterprises LLC</h1>
-      <div class="subtitle">Games, apps, and entertainment projects</div>
+      <div class="subtitle">
+        Games, apps, and entertainment projects
+      </div>
     </header>
 
     <div class="background-controls">
-      <button type="button" onclick="setBackground('./main_web.png')">Main</button>
-      <button type="button" onclick="setBackground('./background_1.png')">Background 1</button>
-      <button type="button" onclick="setBackground('./background_2.png')">Background 2</button>
-      <button type="button" onclick="setBackground('./background_3.png')">Background 3</button>
-      <button type="button" onclick="setBackground('./background_4.png')">Background 4</button>
+      <button type="button" onclick="setBackground('./main_web.png')">
+        Main
+      </button>
+
+      <button type="button" onclick="setBackground('./coral_reef_panorama.png')">
+        Coral Reef
+      </button>
+
+      <button type="button" onclick="setBackground('./desert_sunset_panorama.png')">
+        Desert Sunset
+      </button>
+
+      <button type="button" onclick="setBackground('./space_planets_panorama.png')">
+        Space Planets
+      </button>
+
+      <button type="button" onclick="setBackground('./waterfall_cliffs_panorama.png')">
+        Waterfall Cliffs
+      </button>
+
+      <button type="button" onclick="setBackground('./wildflowers_panorama.png')">
+        Wildflowers
+      </button>
+
+      <button type="button" onclick="setBackground('./winter_forest_panorama.png')">
+        Winter Forest
+      </button>
     </div>
 
     <main id="games-area" class="games">
+
       <section class="game-card">
+        <img src="./tag_21_screenshot.jpg?v=1" alt="TAG-21 Screenshot" />
+
         <h2>TAG-21</h2>
-        <p>A blackjack-style phone game from TAG Enterprises LLC.</p>
-        <a href="#" onclick="return false;">Coming Soon</a>
+
+        <p>
+          A blackjack-style strategy game designed for mobile play.
+        </p>
+
+        <a href="#" onclick="return false;">
+          Coming Soon
+        </a>
       </section>
 
       <section class="game-card">
+        <img src="./tagyz_screenshot.jpg?v=1" alt="TAG-YZ Screenshot" />
+
         <h2>TAG-YZ</h2>
-        <p>A dice game inspired by classic scorecard strategy games.</p>
-        <a href="#" onclick="return false;">Coming Soon</a>
+
+        <p>
+          A fast-paced dice game inspired by classic scorecard gameplay.
+        </p>
+
+        <a href="#" onclick="return false;">
+          Coming Soon
+        </a>
       </section>
 
       <section class="game-card">
         <h2>Mahjong Collection</h2>
-        <p>Mobile-friendly mahjong games in development.</p>
-        <a href="#" onclick="return false;">Coming Soon</a>
+
+        <p>
+          Mobile-friendly mahjong games currently in development.
+        </p>
+
+        <a href="#" onclick="return false;">
+          Coming Soon
+        </a>
       </section>
 
       <section class="game-card">
         <h2>Domino Masters</h2>
-        <p>Domino games designed for quick phone play.</p>
-        <a href="#" onclick="return false;">Coming Soon</a>
+
+        <p>
+          Domino games designed for quick and engaging phone play.
+        </p>
+
+        <a href="#" onclick="return false;">
+          Coming Soon
+        </a>
       </section>
 
       <section class="game-card">
         <h2>Card Collection</h2>
-        <p>Classic card games planned for mobile devices.</p>
-        <a href="#" onclick="return false;">Coming Soon</a>
+
+        <p>
+          A future collection of classic card games for mobile devices.
+        </p>
+
+        <a href="#" onclick="return false;">
+          Coming Soon
+        </a>
       </section>
+
     </main>
 
     <footer>
@@ -201,15 +275,10 @@
 
   <script>
     function setBackground(imagePath) {
-      var cacheBuster = new Date().getTime();
+      const cacheBuster = new Date().getTime();
 
       document.body.style.backgroundImage =
         'url("' + imagePath + '?v=' + cacheBuster + '")';
-
-      document.body.style.backgroundSize = 'cover';
-      document.body.style.backgroundPosition = 'center center';
-      document.body.style.backgroundRepeat = 'no-repeat';
-      document.body.style.backgroundAttachment = 'fixed';
     }
   </script>
 </body>
