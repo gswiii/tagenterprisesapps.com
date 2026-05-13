@@ -21,7 +21,7 @@
     }
 
     body {
-      background-image: url("./images/desert_sunset_panorama.png?v=20260512-clean-1");
+      background-image: url("./images/desert_sunset_panorama.png?v=20260513-1");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -39,7 +39,7 @@
     .main-wrap {
       position: relative;
       width: 100%;
-      max-width: 1400px;
+      max-width: 1024px;
       margin: 0 auto;
     }
 
@@ -68,129 +68,209 @@
       outline-offset: 2px;
     }
 
-    /*
-      Invisible clickable areas over main_web.png.
-      These percentages may need slight adjustment depending on the exact
-      button locations inside your image.
-    */
-
-    .music {
-      left: 43%;
-      top: 9%;
-      width: 14%;
-      height: 6%;
+    /* Top navigation hotspots */
+    .tab-games {
+      left: 14.2%;
+      top: 9.6%;
+      width: 11.6%;
+      height: 3.0%;
     }
 
-    .coral {
-      left: 5%;
-      top: 15%;
-      width: 13%;
-      height: 7%;
+    .tab-backgrounds {
+      left: 25.8%;
+      top: 9.6%;
+      width: 18.0%;
+      height: 3.0%;
     }
 
-    .desert {
-      left: 19%;
-      top: 15%;
-      width: 15%;
-      height: 7%;
+    .tab-support {
+      left: 43.8%;
+      top: 9.6%;
+      width: 14.0%;
+      height: 3.0%;
     }
 
-    .space {
-      left: 35%;
-      top: 15%;
-      width: 15%;
-      height: 7%;
+    .tab-privacy {
+      left: 57.8%;
+      top: 9.6%;
+      width: 14.0%;
+      height: 3.0%;
     }
 
-    .waterfall {
-      left: 51%;
-      top: 15%;
-      width: 18%;
-      height: 7%;
+    .tab-contact {
+      left: 71.8%;
+      top: 9.6%;
+      width: 9.5%;
+      height: 3.0%;
     }
 
-    .wildflowers {
-      left: 70%;
-      top: 15%;
-      width: 13%;
-      height: 7%;
+    /* Main action buttons */
+    .view-games {
+      left: 27.8%;
+      top: 14.2%;
+      width: 18.0%;
+      height: 3.1%;
     }
 
-    .winter {
-      left: 84%;
-      top: 15%;
-      width: 12%;
-      height: 7%;
+    .music-toggle {
+      left: 47.8%;
+      top: 14.2%;
+      width: 20.0%;
+      height: 3.1%;
+    }
+
+    /* Background thumbnail hotspots */
+    .bg-desert {
+      left: 8.5%;
+      top: 24.6%;
+      width: 12.0%;
+      height: 5.8%;
+    }
+
+    .bg-coral {
+      left: 22.0%;
+      top: 24.6%;
+      width: 12.0%;
+      height: 5.8%;
+    }
+
+    .bg-space {
+      left: 35.5%;
+      top: 24.6%;
+      width: 12.0%;
+      height: 5.8%;
+    }
+
+    .bg-waterfall {
+      left: 49.0%;
+      top: 24.6%;
+      width: 12.0%;
+      height: 5.8%;
+    }
+
+    .bg-wildflowers {
+      left: 62.2%;
+      top: 24.6%;
+      width: 12.0%;
+      height: 5.8%;
+    }
+
+    .bg-winter {
+      left: 75.4%;
+      top: 24.6%;
+      width: 12.0%;
+      height: 5.8%;
+    }
+
+    /* Game card hotspots */
+    .game-tag21 {
+      left: 4.0%;
+      top: 37.2%;
+      width: 42.8%;
+      height: 25.0%;
+    }
+
+    .game-tagyz {
+      left: 48.5%;
+      top: 37.2%;
+      width: 46.0%;
+      height: 25.0%;
+    }
+
+    .game-mahjong {
+      left: 4.0%;
+      top: 63.2%;
+      width: 42.8%;
+      height: 15.9%;
+    }
+
+    .game-domino {
+      left: 48.5%;
+      top: 63.2%;
+      width: 46.0%;
+      height: 15.9%;
+    }
+
+    .game-cards {
+      left: 4.0%;
+      top: 80.7%;
+      width: 43.6%;
+      height: 15.6%;
     }
   </style>
 </head>
 
 <body>
-  <audio id="backgroundMusic" loop preload="auto">
-    <source src="./audio/background_music.mp3" type="audio/mpeg" />
-    <source src="./audio/bg_track_1.mp3" type="audio/mpeg" />
-  </audio>
+  <audio id="backgroundMusic" loop preload="auto"></audio>
 
   <main class="page">
     <div class="main-wrap">
       <img
         class="main-image"
-        src="./images/main_web.png?v=20260512-clean-1"
+        src="./images/main_web.png?v=20260513-hotspots-1"
         alt="TAG Enterprises LLC"
       />
 
-      <button
-        class="hotspot music"
-        type="button"
-        aria-label="Start or pause music"
-        onclick="toggleMusic()">
-      </button>
+      <button class="hotspot tab-games" type="button" aria-label="Games" onclick="scrollToGames()"></button>
+      <button class="hotspot tab-backgrounds" type="button" aria-label="Backgrounds" onclick="scrollToBackgrounds()"></button>
+      <button class="hotspot tab-support" type="button" aria-label="Support" onclick="showPlaceholder('Support page coming soon.')"></button>
+      <button class="hotspot tab-privacy" type="button" aria-label="Privacy" onclick="showPlaceholder('Privacy page coming soon.')"></button>
+      <button class="hotspot tab-contact" type="button" aria-label="Contact" onclick="showPlaceholder('Contact page coming soon.')"></button>
 
-      <button
-        class="hotspot coral"
-        type="button"
-        aria-label="Coral Reef background"
-        onclick="setBackground('./images/coral_reef_panorama.png')">
-      </button>
+      <button class="hotspot view-games" type="button" aria-label="View Our Games" onclick="scrollToGames()"></button>
+      <button class="hotspot music-toggle" type="button" aria-label="Play or pause music" onclick="toggleMusic()"></button>
 
-      <button
-        class="hotspot desert"
-        type="button"
-        aria-label="Desert Sunset background"
-        onclick="setBackground('./images/desert_sunset_panorama.png')">
-      </button>
+      <button class="hotspot bg-desert" type="button" aria-label="Desert Sunset Background" onclick="setBackground('./images/desert_sunset_panorama.png')"></button>
+      <button class="hotspot bg-coral" type="button" aria-label="Coral Reef Background" onclick="setBackground('./images/coral_reef_panorama.png')"></button>
+      <button class="hotspot bg-space" type="button" aria-label="Space Planets Background" onclick="setBackground('./images/space_planets_panorama.png')"></button>
+      <button class="hotspot bg-waterfall" type="button" aria-label="Waterfall Cliffs Background" onclick="setBackground('./images/waterfall_cliffs_panorama.png')"></button>
+      <button class="hotspot bg-wildflowers" type="button" aria-label="Wildflowers Background" onclick="setBackground('./images/wildflowers_panorama.png')"></button>
+      <button class="hotspot bg-winter" type="button" aria-label="Winter Forest Background" onclick="setBackground('./images/winter_forest_panorama.png')"></button>
 
-      <button
-        class="hotspot space"
-        type="button"
-        aria-label="Space Planets background"
-        onclick="setBackground('./images/space_planets_panorama.png')">
-      </button>
-
-      <button
-        class="hotspot waterfall"
-        type="button"
-        aria-label="Waterfall Cliffs background"
-        onclick="setBackground('./images/waterfall_cliffs_panorama.png')">
-      </button>
-
-      <button
-        class="hotspot wildflowers"
-        type="button"
-        aria-label="Wildflowers background"
-        onclick="setBackground('./images/wildflowers_panorama.png')">
-      </button>
-
-      <button
-        class="hotspot winter"
-        type="button"
-        aria-label="Winter Forest background"
-        onclick="setBackground('./images/winter_forest_panorama.png')">
-      </button>
+      <button class="hotspot game-tag21" type="button" aria-label="TAG-21" onclick="showPlaceholder('TAG-21 Android release in development.')"></button>
+      <button class="hotspot game-tagyz" type="button" aria-label="TAG-YZ" onclick="showPlaceholder('TAG-YZ Android release in development.')"></button>
+      <button class="hotspot game-mahjong" type="button" aria-label="Mahjong Collection" onclick="showPlaceholder('Mahjong Collection coming soon.')"></button>
+      <button class="hotspot game-domino" type="button" aria-label="Domino Masters" onclick="showPlaceholder('Domino Masters coming soon.')"></button>
+      <button class="hotspot game-cards" type="button" aria-label="Card Collection" onclick="showPlaceholder('Card Collection coming soon.')"></button>
     </div>
   </main>
 
   <script>
+    const musicFiles = [
+      "./audio/background_music.mp3",
+      "./audio/bg_track_1.mp3",
+      "./audio/bg_track_2.mp3",
+      "./audio/bg_track_3.mp3",
+      "./audio/BG TRACK 3.mp3",
+      "./audio/bg track 3.mp3"
+    ];
+
+    let currentMusicIndex = 0;
+    let musicReady = false;
+
+    const music = document.getElementById("backgroundMusic");
+
+    function loadMusicFile(index) {
+      if (index >= musicFiles.length) {
+        console.log("No usable music file found in /audio.");
+        return;
+      }
+
+      currentMusicIndex = index;
+      music.src = musicFiles[currentMusicIndex];
+      music.load();
+    }
+
+    loadMusicFile(0);
+
+    music.addEventListener("canplaythrough", function () {
+      musicReady = true;
+    });
+
+    music.addEventListener("error", function () {
+      loadMusicFile(currentMusicIndex + 1);
+    });
+
     function setBackground(imagePath) {
       const cacheBuster = new Date().getTime();
 
@@ -199,16 +279,34 @@
     }
 
     function toggleMusic() {
-      const music = document.getElementById("backgroundMusic");
-
       if (music.paused) {
         music.volume = 0.35;
-        music.play().catch(function () {
-          console.log("Music could not play. Check the audio filename/path.");
+
+        music.play().catch(function (error) {
+          console.log("Music could not play:", error);
+          alert("Music could not play. Check that your audio file exists in the /audio folder.");
         });
       } else {
         music.pause();
       }
+    }
+
+    function scrollToGames() {
+      window.scrollTo({
+        top: Math.round(window.innerHeight * 0.34),
+        behavior: "smooth"
+      });
+    }
+
+    function scrollToBackgrounds() {
+      window.scrollTo({
+        top: Math.round(window.innerHeight * 0.18),
+        behavior: "smooth"
+      });
+    }
+
+    function showPlaceholder(message) {
+      alert(message);
     }
   </script>
 </body>
