@@ -21,7 +21,7 @@
     }
 
     body {
-      background-image: url("./images/desert_sunset_panorama.png?v=20260512-foreground-fix-1");
+      background-image: url("./images/desert_sunset_panorama.png?v=20260512-bg-1");
       background-size: cover;
       background-position: center center;
       background-repeat: no-repeat;
@@ -33,7 +33,7 @@
     .overlay {
       min-height: 100vh;
       width: 100%;
-      background: rgba(0, 0, 0, 0.28);
+      background: rgba(0, 0, 0, 0.30);
       padding: 24px 18px 32px;
     }
 
@@ -54,7 +54,7 @@
       text-shadow: 0 3px 8px rgba(0,0,0,0.8);
     }
 
-    .background-controls {
+    .controls {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -63,7 +63,7 @@
       max-width: 1300px;
     }
 
-    .background-controls button {
+    button {
       cursor: pointer;
       border: 2px solid rgba(255,255,255,0.9);
       border-radius: 999px;
@@ -75,8 +75,12 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.45);
     }
 
-    .background-controls button:hover {
+    button:hover {
       background: rgba(255,255,255,0.22);
+    }
+
+    .music-button {
+      background: rgba(0, 88, 180, 0.78);
     }
 
     .main-artwork-wrap {
@@ -95,44 +99,6 @@
       box-shadow: 0 12px 34px rgba(0,0,0,0.55);
     }
 
-    .games {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .game-card {
-      background: rgba(0,0,0,0.62);
-      border: 1px solid rgba(255,255,255,0.28);
-      border-radius: 18px;
-      padding: 22px;
-      min-height: 220px;
-      text-align: center;
-      box-shadow: 0 10px 28px rgba(0,0,0,0.45);
-    }
-
-    .game-card img {
-      width: 100%;
-      max-width: 240px;
-      height: auto;
-      border-radius: 12px;
-      margin-bottom: 14px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.45);
-    }
-
-    .game-card h2 {
-      margin: 0 0 12px;
-      font-size: 1.6rem;
-    }
-
-    .game-card p {
-      margin: 0;
-      line-height: 1.45;
-      font-size: 1rem;
-    }
-
     footer {
       text-align: center;
       margin-top: 36px;
@@ -146,11 +112,11 @@
         padding: 18px 12px 28px;
       }
 
-      .background-controls {
+      .controls {
         gap: 8px;
       }
 
-      .background-controls button {
+      button {
         font-size: 0.85rem;
         padding: 8px 12px;
       }
@@ -163,57 +129,53 @@
 </head>
 
 <body>
+  <audio id="backgroundMusic" loop preload="auto">
+    <source src="./audio/background_music.mp3" type="audio/mpeg" />
+  </audio>
+
   <div class="overlay">
     <header>
       <h1>TAG Enterprises LLC</h1>
       <div class="subtitle">Games, apps, and entertainment projects</div>
     </header>
 
-    <div class="background-controls">
-      <button type="button" onclick="setBackground('./images/coral_reef_panorama.png')">Coral Reef</button>
-      <button type="button" onclick="setBackground('./images/desert_sunset_panorama.png')">Desert Sunset</button>
-      <button type="button" onclick="setBackground('./images/space_planets_panorama.png')">Space Planets</button>
-      <button type="button" onclick="setBackground('./images/waterfall_cliffs_panorama.png')">Waterfall Cliffs</button>
-      <button type="button" onclick="setBackground('./images/wildflowers_panorama.png')">Wildflowers</button>
-      <button type="button" onclick="setBackground('./images/winter_forest_panorama.png')">Winter Forest</button>
+    <div class="controls">
+      <button type="button" class="music-button" onclick="toggleMusic()">
+        Start Music
+      </button>
+
+      <button type="button" onclick="setBackground('./images/coral_reef_panorama.png')">
+        Coral Reef
+      </button>
+
+      <button type="button" onclick="setBackground('./images/desert_sunset_panorama.png')">
+        Desert Sunset
+      </button>
+
+      <button type="button" onclick="setBackground('./images/space_planets_panorama.png')">
+        Space Planets
+      </button>
+
+      <button type="button" onclick="setBackground('./images/waterfall_cliffs_panorama.png')">
+        Waterfall Cliffs
+      </button>
+
+      <button type="button" onclick="setBackground('./images/wildflowers_panorama.png')">
+        Wildflowers
+      </button>
+
+      <button type="button" onclick="setBackground('./images/winter_forest_panorama.png')">
+        Winter Forest
+      </button>
     </div>
 
     <div class="main-artwork-wrap">
       <img
         class="main-artwork"
-        src="./images/main_web.png?v=20260512-foreground-fix-1"
+        src="./images/main_web.png?v=20260512-main-1"
         alt="TAG Enterprises LLC game collection"
       />
     </div>
-
-    <main class="games">
-      <section class="game-card">
-        <img src="./images/tag_21_screenshot.jpg?v=20260512-1" alt="TAG-21 Screenshot" />
-        <h2>TAG-21</h2>
-        <p>A blackjack-inspired mobile game featuring strategic betting, dealer play, and robot opponents.</p>
-      </section>
-
-      <section class="game-card">
-        <img src="./images/tagyz_screenshot.jpg?v=20260512-1" alt="TAG-YZ Screenshot" />
-        <h2>TAG-YZ</h2>
-        <p>A modern dice strategy game inspired by classic scorecard gameplay.</p>
-      </section>
-
-      <section class="game-card">
-        <h2>Mahjong Collection</h2>
-        <p>Mobile mahjong experiences currently under development.</p>
-      </section>
-
-      <section class="game-card">
-        <h2>Domino Masters</h2>
-        <p>Domino-based games designed specifically for phone gameplay.</p>
-      </section>
-
-      <section class="game-card">
-        <h2>Card Collection</h2>
-        <p>A future collection of classic card games for mobile devices.</p>
-      </section>
-    </main>
 
     <footer>
       © 2026 TAG Enterprises LLC
@@ -226,11 +188,26 @@
 
       document.body.style.backgroundImage =
         'url("' + imagePath + '?v=' + cacheBuster + '")';
+    }
 
-      document.body.style.backgroundSize = 'cover';
-      document.body.style.backgroundPosition = 'center center';
-      document.body.style.backgroundRepeat = 'no-repeat';
-      document.body.style.backgroundAttachment = 'fixed';
+    function toggleMusic() {
+      const music = document.getElementById("backgroundMusic");
+      const button = document.querySelector(".music-button");
+
+      if (music.paused) {
+        music.volume = 0.35;
+
+        music.play()
+          .then(function () {
+            button.textContent = "Pause Music";
+          })
+          .catch(function () {
+            button.textContent = "Click Again to Start Music";
+          });
+      } else {
+        music.pause();
+        button.textContent = "Start Music";
+      }
     }
   </script>
 </body>
